@@ -43,4 +43,6 @@ class DatabaseManager
 
 }
 
+
+$db=new DatabaseManager;
 ?>

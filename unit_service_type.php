@@ -16,7 +16,10 @@ class unit_service_type
 
 
 
+    function __construct($dept_id,$college_id,$department_name) {
 
+
+    }
 
 
     /**
