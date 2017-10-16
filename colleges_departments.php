@@ -69,5 +69,18 @@ class colleges_departments
     {
         return $this->dept_id;
     }
+
+
+    function update($collges_department_object){
+
+
+        R::exec( 'update colleges_departments set name="'.$collges_department_object->getDepartmentName.'"   where dept_id="'.$collges_department_object->getDeptId().'"' );
+
+        R::close();
+    }
+
+
+
+
 }
 ?>
