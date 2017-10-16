@@ -41,6 +41,23 @@ class colleges {
     {
         return $this->name;
     }
+
+
+    function  delete ($clloege_object) {
+
+}
+
+
+function update ($clloege_object) {
+
+}
+
+
+
+function insert($clloege_object) {
+
+}
+
 }
 
 
