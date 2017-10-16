@@ -9,8 +9,8 @@
 class DatabaseManager
 {
 
-    private $user='';
-    private $password='';
-    private $dbName='';
+    private  $user='root';
+    private $password='dwddwddwd';
+    private $dbName='unit';
 
 }
