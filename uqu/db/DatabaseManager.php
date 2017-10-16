@@ -5,7 +5,7 @@
  * Date: 15/10/17
  * Time: 09:50 م
  */
-require_once '../../scripts/RedBeanPHP5Beta/rb.php';
+require_once 'scripts/RedBeanPHP5Beta/rb.php';
 class DatabaseManager
 {
 
