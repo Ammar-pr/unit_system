@@ -43,18 +43,18 @@ class colleges {
     }
 
 
-    function  delete ($clloege_object) {
+    function  delete ($college_object) {
 
 }
 
 
-function update ($clloege_object) {
+function update ($college_object) {
 
 }
 
 
 
-function insert($clloege_object) {
+function insert($college_object) {
 
 }
 
