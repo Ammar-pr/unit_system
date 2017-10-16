@@ -9,15 +9,12 @@ require_once '../../scripts/RedBeanPHP5Beta/rb.php';
 class DatabaseManager
 {
 
-    private  $user='root';
-    private $password='dwddwddwd';
-    private $dbName='mysql:host=localhost;dbname=unit';
 
 
 
     public function __construct()
     {
-echo "sdfd";
+
        $this->getConnection();
 
     }
