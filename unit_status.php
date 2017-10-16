@@ -13,7 +13,7 @@ class unit_status
     //status_id	status_name	status_code	desc
 
 
-protected $status_id;// autoincreament 
+protected $status_id;// autoincreament
 protected $status_name;
 protected  $status_code;
 protected  $desc;
@@ -87,3 +87,5 @@ protected  $desc;
 
 
 }
+
+?>

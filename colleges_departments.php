@@ -70,3 +70,4 @@ class colleges_departments
         return $this->dept_id;
     }
 }
+?>
