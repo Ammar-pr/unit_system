@@ -11,7 +11,7 @@ class DatabaseManager
 
     private  $user='root';
     private $password='dwddwddwd';
-    private $dbName='unit';
+    private $dbName='mysql:host=localhost;dbname=unit';
 
 
 
@@ -28,7 +28,7 @@ class DatabaseManager
 
         if (R::testConnection() != 1) {
 
-            R::setup( 'mysql:host=localhost;dbname=unit',
+            R::setup( '$this->$dbName',
                 '$this->$user', '$this->$password' );
 
            return  R::testConnection();
