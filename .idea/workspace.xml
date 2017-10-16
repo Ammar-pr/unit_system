@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d86c5b69-7839-4670-bda9-b3a1701d19ce" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/unit_service_type.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colleges.php" afterPath="$PROJECT_DIR$/colleges.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_file_types.php" afterPath="$PROJECT_DIR$/unit_file_types.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/unit_service_type.php" afterPath="$PROJECT_DIR$/unit_service_type.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -20,18 +21,18 @@
       <file leaf-file-name="colleges.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/colleges.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="17">
-              <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
+            <state relative-caret-position="119">
+              <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unit_file_types.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="unit_file_types.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/unit_file_types.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="136">
-              <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
+            <state relative-caret-position="340">
+              <caret line="52" column="3" lean-forward="false" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
               <folding />
             </state>
           </provider>
@@ -57,11 +58,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="unit_service_type.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="unit_service_type.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/unit_service_type.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="204">
-              <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+            <state relative-caret-position="221">
+              <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -87,10 +88,10 @@
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/colleges" />
         <option value="$PROJECT_DIR$/colleges_departments.php" />
-        <option value="$PROJECT_DIR$/colleges.php" />
-        <option value="$PROJECT_DIR$/unit_file_types.php" />
         <option value="$PROJECT_DIR$/uqu/db/DatabaseManager.php" />
         <option value="$PROJECT_DIR$/unit_service_type.php" />
+        <option value="$PROJECT_DIR$/colleges.php" />
+        <option value="$PROJECT_DIR$/unit_file_types.php" />
       </list>
     </option>
   </component>
@@ -101,7 +102,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="69" />
     <option name="y" value="95" />
     <option name="width" value="1260" />
@@ -192,15 +193,15 @@
       <option name="presentableId" value="Default" />
       <updated>1507791501416</updated>
       <workItem from="1507791505745" duration="9951000" />
-      <workItem from="1508133538078" duration="7600000" />
+      <workItem from="1508133538078" duration="7841000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="17551000" />
+    <option name="totallyTimeSpent" value="17792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="702" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="702" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24296875" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -282,30 +283,6 @@
     <entry file="file://$PROJECT_DIR$/login.html" />
     <entry file="file://$PROJECT_DIR$/login.php" />
     <entry file="file://$PROJECT_DIR$/colleges" />
-    <entry file="file://$PROJECT_DIR$/colleges_departments.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/colleges.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="26" column="5" lean-forward="false" selection-start-line="26" selection-start-column="5" selection-end-line="26" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/unit_file_types.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="17" column="34" lean-forward="false" selection-start-line="17" selection-start-column="34" selection-end-line="17" selection-end-column="34" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uqu/db/DatabaseManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="158">
@@ -316,8 +293,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/unit_service_type.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="17" column="1" lean-forward="true" selection-start-line="17" selection-start-column="1" selection-end-line="17" selection-end-column="1" />
+        <state relative-caret-position="221">
+          <caret line="18" column="0" lean-forward="true" selection-start-line="18" selection-start-column="0" selection-end-line="18" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colleges.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="119">
+          <caret line="7" column="25" lean-forward="false" selection-start-line="7" selection-start-column="25" selection-end-line="7" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colleges_departments.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="153">
+          <caret line="14" column="0" lean-forward="false" selection-start-line="14" selection-start-column="0" selection-end-line="14" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/unit_file_types.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="52" column="3" lean-forward="false" selection-start-line="52" selection-start-column="3" selection-end-line="52" selection-end-column="3" />
           <folding />
         </state>
       </provider>

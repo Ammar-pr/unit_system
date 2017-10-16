@@ -12,9 +12,8 @@ class unit_file_types
  protected  $unit_id;
  protected  $extension;
 
-    public function __construct($type_id,$unit_id,$extension) {
+    public function __construct($unit_id,$extension) {
         $this->extension = $extension;
-        $this->type_id = $type_id;
         $this->unit_id = $unit_id;
 
     }
@@ -31,10 +30,6 @@ class unit_file_types
     /**
      * @param mixed $type_id
      */
-    public function setTypeId($type_id)
-    {
-        $this->type_id = $type_id;
-    }
 
     /**
      * @param mixed $unit_id
@@ -55,10 +50,7 @@ class unit_file_types
     /**
      * @return mixed
      */
-    public function getTypeId()
-    {
-        return $this->type_id;
-    }
+   
 
     /**
      * @return mixed

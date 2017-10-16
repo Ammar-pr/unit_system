@@ -5,8 +5,7 @@ class colleges {
 
     protected $college_id;
     protected $name ;
-    function __construct($college_id,$name) {
-        $this->college_id = $college_id;
+    function __construct($name) {
         $this->name = $name;
     }
 
