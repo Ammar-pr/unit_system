@@ -17,8 +17,8 @@ class DatabaseManager
 
     public function __construct()
     {
-
-      $this->getConnection();
+echo "sdfd";
+       $this->getConnection();
 
     }
 
@@ -26,18 +26,18 @@ class DatabaseManager
 
 
 
-        if (R::testConnection() != 1) {
 
-            R::setup( '$this->$dbName',
-                '$this->$user', '$this->$password' );
 
-           return  R::testConnection();
+            R::setup( 'mysql:host=localhost;dbname=unit',
+                'root', 'dwddwddwd' );
 
 
 
-        }
+
+        $isConnected = R::testConnection();
 
 
+         return $isConnected;
 
     }
 
