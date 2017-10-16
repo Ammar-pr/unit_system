@@ -74,8 +74,10 @@ class colleges_departments
     function update(){
 
 try {
-        R::exec( 'update colleges_departments set department_name="'.$this->getDepartmentName().'"   where dept_id="'.$this->getDeptId().'"' );
-
+   $status= R::exec( 'update colleges_departments set department_name="'.$this->getDepartmentName().'"   where dept_id="'.$this->getDeptId().'"' );
+  if($status==0){
+    echo "can't update the record ";
+  }
         R::close();
     }catch (SQLiteException $sq){
       $sq->getMessage();

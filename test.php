@@ -12,11 +12,12 @@ class test
 
 
      public function test_update_colleges_department(){
-     $te_object= new  colleges_departments('1','1','computr_eng');
+         error_reporting(E_ALL);
+         ini_set('display_errors', 1);
+     $te_object= new  colleges_departments('1','1','sdf');
 
          $te_object->update();
-
-             }
+                  }
 
 
 
