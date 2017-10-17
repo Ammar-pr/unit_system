@@ -57,6 +57,36 @@ class colleges {
         }
     }
 
+
+    public  function get_colleges_object_list()
+    {
+
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM colleges ");
+            R::convertToBeans( 'colleges', $row );
+            if(count($row)>0){
+
+                return $row;
+            }else {
+
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
     public function delete_college_object() {
 
         try {

@@ -107,6 +107,24 @@ public  function get_colleges_depratment_object()
 }
     }
 
+    public  function get_colleges_departments_object_list()
+    {
+
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM collegesdepartments ");
+            R::convertToBeans( 'collegesdepartments', $row );
+            if(count($row)>0){
+
+                return $row;
+            }else {
+
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
 
 
     public function delete_colleges_depratment_object() {

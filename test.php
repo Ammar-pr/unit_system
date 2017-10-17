@@ -25,7 +25,7 @@ class test
         // $te_object->setCollegeId('1');
 
 
-         $te_object->delete_user_role_All_object();
+         $te_object->get_user_role_object_list();
 
                   }
 

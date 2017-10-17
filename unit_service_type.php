@@ -112,7 +112,24 @@ class unit_service_type
     }
 
 
+    public  function get_unit_servic_type_object_list()
+    {
 
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM unitservicetype ");
+            R::convertToBeans( 'unitservicetype', $row );
+            if(count($row)>0){
+
+                return $row;
+            }else {
+
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
 
 
 
@@ -128,7 +145,7 @@ class unit_service_type
             $sq->getMessage();
         }
     }
-    public function delete_user_role_All_object() {
+    public function delete_user_role_All_objects() {
 
         try {
             if(  R::exec( 'delete  from  usersroles ')==1){

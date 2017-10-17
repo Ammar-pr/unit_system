@@ -131,6 +131,42 @@ protected  $description;
         }
     }
 
+
+
+
+    public  function get_unit_status_object_list()
+    {
+
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM unitstatus ");
+            R::convertToBeans( 'unitstatus', $row );
+            if(count($row)>0){
+
+                return $row;
+            }else {
+
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     public function delete_unit_status_object() {
 
         try {

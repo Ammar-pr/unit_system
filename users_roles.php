@@ -98,6 +98,28 @@ class users_roles
         }
     }
 
+
+
+    public  function get_user_role_object_list()
+    {
+
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM usersroles ");
+            R::convertToBeans( 'usersroles', $row );
+            if(count($row)>0){
+              echo "the lengh of this array is ".count($row);
+                return $row;
+            }else {
+
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
     public function delete_user_role_object() {
 
         try {

@@ -93,6 +93,40 @@ class unit_file_types
         }
     }
 
+
+
+
+
+
+    public  function get_unit_file_type_object_list()
+    {
+
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM unitfiletype ");
+            R::convertToBeans( 'unitfiletype', $row );
+            if(count($row)>0){
+
+                return $row;
+            }else {
+
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
+
+
+
+
+
+
+
+
+
     public function delete_unit_file_type_object() {
 
         try {
@@ -105,6 +139,12 @@ class unit_file_types
             $sq->getMessage();
         }
     }
+
+
+
+
+
+
 
 
     function update(){
