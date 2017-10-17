@@ -40,7 +40,22 @@ class colleges {
     {
         return $this->name;
     }
+    public  function get_colleges_depratment_object()
+    {
 
+        // to check specfic depratment for any clolleges
+        try {
+            $row = R::getAll("SELECT * FROM colleges where id='".$this->getCollegeId()."'");
+             R::convertToBeans( 'user', $row );
+            if(count($row)>0){
+                return $row;
+            }else {
+                return null;
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
 
     public function delete_college_object() {
 

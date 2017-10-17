@@ -93,10 +93,15 @@ public  function get_colleges_depratment_object()
     // to check specfic depratment for any clolleges
     try {
         $id=$this->getDeptId();
-        $row=    R::getrow( 'SELECT * FROM colleges_departments WHERE id= 1 ');
+
+        $row = R::getAll("SELECT * FROM colleges_departments where id='".$this->getDeptId()."' ");
         $colleges_dep = R::convertToBeans( 'colleges_departments', $row );
 
-
+         if(count($row)>0){
+             return $row;
+         }else {
+             return null;
+         }
 }catch (SQLiteException $sq){
     $sq->getMessage();
 }
