@@ -71,10 +71,20 @@ class colleges {
     }
 
 
-function update ($college_object) {
+    function update(){
 
-}
+        try {
+            $status= R::exec( 'update colleges set name="'.$this->getName().'"   where id="'.$this->getCollegeId().'"' );
+            if($status==0){
+                echo "can't update the record ";
+            }
+            R::close();
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
 
+
+    }
 
 
 function insert($college_object) {
