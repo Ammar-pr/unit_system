@@ -137,8 +137,8 @@ class unit_service_type
         $unit_service_type->description=$this->getDescription();
 
 
-        $id_redbean_unit_file_type_id=  R::store($unit_service_type); // store is done
-        if($id_redbean_unit_file_type_id>0){
+        $id_redbean_unit_service_type_id=  R::store($unit_service_type); // store is done
+        if($id_redbean_unit_service_type_id>0){
 
         }else {
             echo "the data cannot be inserted in the table unit service type";
