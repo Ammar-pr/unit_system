@@ -96,8 +96,8 @@ public  function get_colleges_depratment_object()
     $row   = R::find( 'colleges_departments', ' dept_id =1 ');
         $colleges_dep = R::convertToBeans( 'colleges_departments', $row );
 
-        foreach($row as $v){
-            echo $v;
+        foreach($row as $object){
+            echo $object;
         }
 
 }catch (SQLiteException $sq){
