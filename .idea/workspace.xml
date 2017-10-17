@@ -6,7 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="d86c5b69-7839-4670-bda9-b3a1701d19ce" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colleges.php" afterPath="$PROJECT_DIR$/colleges.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colleges_departments.php" afterPath="$PROJECT_DIR$/colleges_departments.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -28,17 +27,17 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colleges.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="colleges.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/colleges.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="328">
-              <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="19" />
+            <state relative-caret-position="476">
+              <caret line="100" column="8" lean-forward="false" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
               <folding>
-                <marker date="1508239754516" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
-                <marker date="1508239754516" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
-                <marker date="1508239754516" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
-                <marker date="1508239754516" expanded="true" signature="1208:1270" ph="delete from " />
-                <marker date="1508239754516" expanded="true" signature="1519:1605" ph="update colle... " />
+                <marker date="1508240646482" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
+                <marker date="1508240646482" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
+                <marker date="1508240646482" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
+                <marker date="1508240646482" expanded="true" signature="1208:1270" ph="delete from " />
+                <marker date="1508240646482" expanded="true" signature="1519:1605" ph="update colle... " />
               </folding>
             </state>
           </provider>
@@ -63,11 +62,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+            <state relative-caret-position="294">
+              <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -138,8 +137,8 @@
         <option value="$PROJECT_DIR$/MyTableFormatter.php" />
         <option value="$PROJECT_DIR$/uqu/db/DatabaseManager.php" />
         <option value="$PROJECT_DIR$/colleges_departments.php" />
-        <option value="$PROJECT_DIR$/colleges.php" />
         <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/colleges.php" />
       </list>
     </option>
   </component>
@@ -243,12 +242,12 @@
       <workItem from="1507791505745" duration="9951000" />
       <workItem from="1508133538078" duration="19309000" />
       <workItem from="1508226577399" duration="4022000" />
-      <workItem from="1508231592902" duration="5891000" />
+      <workItem from="1508231592902" duration="6554000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="39173000" />
+    <option name="totallyTimeSpent" value="39836000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1296" height="744" extended-state="6" />
@@ -391,11 +390,11 @@
         <state relative-caret-position="1003">
           <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
           <folding>
-            <marker date="1508239754516" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
-            <marker date="1508239754516" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
-            <marker date="1508239754516" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
-            <marker date="1508239754516" expanded="true" signature="1208:1270" ph="delete from " />
-            <marker date="1508239754516" expanded="true" signature="1519:1605" ph="update colle... " />
+            <marker date="1508240646482" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
+            <marker date="1508240646482" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
+            <marker date="1508240646482" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
+            <marker date="1508240646482" expanded="true" signature="1208:1270" ph="delete from " />
+            <marker date="1508240646482" expanded="true" signature="1519:1605" ph="update colle... " />
           </folding>
         </state>
       </provider>
@@ -462,11 +461,11 @@
         <state relative-caret-position="952">
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
           <folding>
-            <marker date="1508239754516" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
-            <marker date="1508239754516" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
-            <marker date="1508239754516" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
-            <marker date="1508239754516" expanded="true" signature="1208:1270" ph="delete from " />
-            <marker date="1508239754516" expanded="true" signature="1519:1605" ph="update colle... " />
+            <marker date="1508240646482" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
+            <marker date="1508240646482" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
+            <marker date="1508240646482" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
+            <marker date="1508240646482" expanded="true" signature="1208:1270" ph="delete from " />
+            <marker date="1508240646482" expanded="true" signature="1519:1605" ph="update colle... " />
           </folding>
         </state>
       </provider>
@@ -557,20 +556,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/colleges.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="328">
-          <caret line="73" column="19" lean-forward="false" selection-start-line="73" selection-start-column="13" selection-end-line="73" selection-end-column="19" />
-          <folding>
-            <marker date="1508239754516" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
-            <marker date="1508239754516" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
-            <marker date="1508239754516" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
-            <marker date="1508239754516" expanded="true" signature="1208:1270" ph="delete from " />
-            <marker date="1508239754516" expanded="true" signature="1519:1605" ph="update colle... " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/uqu/db/DatabaseManager.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="323">
@@ -581,9 +566,23 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="39" lean-forward="false" selection-start-line="18" selection-start-column="39" selection-end-line="18" selection-end-column="39" />
+        <state relative-caret-position="294">
+          <caret line="20" column="0" lean-forward="true" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colleges.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="476">
+          <caret line="100" column="8" lean-forward="false" selection-start-line="100" selection-start-column="8" selection-end-line="100" selection-end-column="8" />
+          <folding>
+            <marker date="1508240646482" expanded="true" signature="800:833" ph="SELECT * FRO... colleges" />
+            <marker date="1508240646482" expanded="true" signature="800:856" ph="SELECT * FRO... colleges" />
+            <marker date="1508240646482" expanded="true" signature="800:859" ph="SELECT * FRO... user" />
+            <marker date="1508240646482" expanded="true" signature="1208:1270" ph="delete from " />
+            <marker date="1508240646482" expanded="true" signature="1519:1605" ph="update colle... " />
+          </folding>
         </state>
       </provider>
     </entry>

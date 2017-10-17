@@ -87,8 +87,21 @@ class colleges {
     }
 
 
-function insert($college_object) {
+function insert() {
+    $colleges= R::dispense('colleges');
 
+    //rb-mysql.php
+    //  $what=$_POST['what'];
+
+    $colleges->name=$this->getName();
+
+
+  $id_redbean_colleges_id=  R::store($colleges); // store is done
+    if($id_redbean_colleges_id>0){
+        
+    }else {
+
+    }
 }
 
 }
