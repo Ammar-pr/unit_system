@@ -15,7 +15,7 @@ class test
      public function test_update_colleges_department(){
          error_reporting(E_ALL);
          ini_set('display_errors', 1);
-     $te_object= new  colleges('ssd');
+     $te_object= new  colleges_departments('ssd','','sfdfd');
         // $te_object->setCollegeId('1');
 
 

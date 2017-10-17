@@ -17,9 +17,9 @@ class colleges_departments
 
 
     function __construct($dept_id,$college_id,$department_name) {
-        $this->$college_id = $college_id;
-        $this->$department_name = $department_name;
-        $this->$dept_id = $dept_id;
+        $this->college_id = $college_id;
+        $this->department_name = $department_name;
+        $this->dept_id = $dept_id;
     }
 
     /**
@@ -74,7 +74,7 @@ class colleges_departments
     function update(){
 
 try {
-   $status= R::exec( 'update colleges_departments set department_name="'.$this->getDepartmentName().'"   where id="'.$this->getDeptId().'"' );
+   $status= R::exec( 'update collegesdepartments set department_name="'.$this->getDepartmentName().'"   where id="'.$this->getDeptId().'"' );
   if($status==0){
     echo "can't update the record ";
   }
@@ -94,7 +94,7 @@ public  function get_colleges_depratment_object()
     try {
         $id=$this->getDeptId();
 
-        $row = R::getAll("SELECT * FROM colleges_departments where id='".$this->getDeptId()."' ");
+        $row = R::getAll("SELECT * FROM collegesdepartments where id='".$this->getDeptId()."' ");
         $colleges_dep = R::convertToBeans( 'colleges_departments', $row );
 
          if(count($row)>0){
@@ -112,7 +112,7 @@ public  function get_colleges_depratment_object()
     public function delete_colleges_depratment_object() {
 
         try {
-          if(  R::exec( 'delete from  colleges_departments    WHERE id ="'.$this->getDeptId().'" ')==1){
+          if(  R::exec( 'delete from  collegesdepartments    WHERE id ="'.$this->getDeptId().'" ')==1){
 
           }else{
               echo"there is issue with delete";
@@ -124,14 +124,14 @@ public  function get_colleges_depratment_object()
 
 
     function insert() {
-        $colleges_departments= R::dispense('colleges_departments');
+        $colleges_departments= R::dispense('collegesdepartments');
 
 
 
-        $colleges_departments->department_name=$this->getDepartmentName();
+        $colleges_departments->departmentname=$this->getDepartmentName();
+        $colleges_departments->college_id=8;
 
-
-       // $id_redbean_colleges_dep_id=  R::store($colleges_departments); // store is done
+        $id_redbean_colleges_dep_id=  R::store($colleges_departments); // store is done
         if($id_redbean_colleges_dep_id>0){
 
         }else {
