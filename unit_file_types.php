@@ -108,7 +108,7 @@ class unit_file_types
 
 
     function update(){
-            echo "result of extesion".$this->getExtension();
+
         try {
             $status= R::exec( 'update unitfiletype set extension="'.$this->getExtension().'"   where id="'.$this->getId().'"' );
             if($status==0){
