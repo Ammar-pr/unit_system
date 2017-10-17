@@ -5,7 +5,7 @@
  * Date: 15/10/17
  * Time: 02:40 م
  */
-
+require_once 'scripts/RedBeanPHP5Beta/RedBean_IBeanFormatter.php';
 class colleges_departments
 {
 
@@ -82,10 +82,28 @@ try {
     }catch (SQLiteException $sq){
       $sq->getMessage();
 }
+
+
     }
 
 
+public  function get_colleges_depratment_object()
+{
+    // to check specfic depratment for any clolleges
+    try {
+        $id=$this->getDeptId();
+      //  R::getIDField('colleges_departments');
+    $row   = R::find( 'colleges_departments', ' dept_id =1 ');
+        $colleges_dep = R::convertToBeans( 'colleges_departments', $row );
 
+        foreach($row as $v){
+            echo $v;
+        }
+
+}catch (SQLiteException $sq){
+    $sq->getMessage();
+}
+    }
 
 }
 ?>
