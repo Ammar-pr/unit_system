@@ -17,9 +17,9 @@ class colleges_departments
 
 
     function __construct($dept_id,$college_id,$department_name) {
-        $this->college_id = $college_id;
-        $this->department_name = $department_name;
-        $this->dept_id = $dept_id;
+        $this->$college_id = $college_id;
+        $this->$department_name = $department_name;
+        $this->$dept_id = $dept_id;
     }
 
     /**
@@ -123,9 +123,20 @@ public  function get_colleges_depratment_object()
     }
 
 
+    function insert() {
+        $colleges_departments= R::dispense('colleges_departments');
 
-    public function tests () {
 
+
+        $colleges_departments->department_name=$this->getDepartmentName();
+
+
+       // $id_redbean_colleges_dep_id=  R::store($colleges_departments); // store is done
+        if($id_redbean_colleges_dep_id>0){
+
+        }else {
+            echo "the data cannot be inserted in the table colleges departments";
+        }
     }
 
 
