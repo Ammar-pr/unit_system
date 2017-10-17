@@ -7,6 +7,7 @@
  */
 require_once 'uqu/db/DatabaseManager.php';
 require_once 'colleges_departments.php';
+require_once 'colleges.php';
 class test
 {
 
@@ -14,9 +15,10 @@ class test
      public function test_update_colleges_department(){
          error_reporting(E_ALL);
          ini_set('display_errors', 1);
-     $te_object= new  colleges_departments('1','1','sdf');
+     $te_object= new  colleges('1');
+         $te_object->setCollegeId('1');
 
-         $te_object->get_colleges_depratment_object();
+         $te_object->delete_college_object();
                   }
 
 

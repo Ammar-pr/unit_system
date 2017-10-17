@@ -42,9 +42,18 @@ class colleges {
     }
 
 
-    function  delete ($college_object) {
+    public function delete_college_object() {
 
-}
+        try {
+            if(  R::exec( 'delete from  colleges    WHERE id ="'.$this->getCollegeId().'" ')==1){
+
+            }else{
+                echo"there is issue with delete";
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
 
 
 function update ($college_object) {

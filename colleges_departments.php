@@ -89,16 +89,11 @@ try {
 
 public  function get_colleges_depratment_object()
 {
-    R::setup( 'mysql:host=localhost;dbname=unit',
-        'root', 'dwddwddwd' );
+
     // to check specfic depratment for any clolleges
     try {
-        R::setup( 'mysql:host=localhost;dbname=unit',
-            'root', 'dwddwddwd' );
         $id=$this->getDeptId();
-      //  R::getIDField('colleges_departments');
-   // $row   = R::find( 'colleges_departments', ' dept_id ="'.$id.'" ');
-        $row=    R::getrow( 'SELECT * FROM colleges_departments WHERE dept_id= 1 ');
+        $row=    R::getrow( 'SELECT * FROM colleges_departments WHERE id= 1 ');
         $colleges_dep = R::convertToBeans( 'colleges_departments', $row );
 
 
@@ -110,10 +105,9 @@ public  function get_colleges_depratment_object()
 
 
     public function delete_colleges_depratment_object() {
-        R::setup( 'mysql:host=localhost;dbname=unit',
-            'root', 'dwddwddwd' );
+
         try {
-          if(  R::exec( 'delete from  colleges_departments    WHERE dept_id =1 ')){
+          if(  R::exec( 'delete from  colleges_departments    WHERE id ="'.$this->getDeptId().'" ')==1){
 
           }else{
               echo"there is issue with delete";

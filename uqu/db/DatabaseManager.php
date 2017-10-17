@@ -11,25 +11,32 @@ require_once 'scripts/RedBeanPHP/rb.php';
 
 
 
+class DatabaseManager {
 
 
-$con=mysqli_connect("localhost","root","dwddwddwd","unit");
-// Check connection
-if (mysqli_connect_errno())
-{
-    echo "Failed to connect to MySQL: " . mysqli_connect_error();
+
+    public function getConnection (){
+
+
+        try {
+
+           if( !R::testConnection())
+               R::setup( 'mysql:host=localhost;dbname=unit',
+                   'root', 'dwddwddwd' );
+
+        }catch (\RedBeanPHP\RedException $rd)
+        {
+            $rd->getMessage();
+        }
+
+
+    }
 }
 
-// ...some PHP code for database "my_db"...
 
-// Change database to "test"
-mysqli_select_db($con,"unit");
 
-// ...some PHP code for database "test"...
-    R::setup('mysql:host=' . localhost . ';dbname=' . 'unit', 'root', 'dwddwdwd');
-
-mysqli_close($con);
-
+$db=new DatabaseManager;
+$db->getConnection();
 
 
 ?>

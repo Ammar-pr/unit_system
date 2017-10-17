@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d86c5b69-7839-4670-bda9-b3a1701d19ce" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/Adapter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/QueryWriter/AQueryWriter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/QueryWriter/CUBRID.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/QueryWriter/MySQL.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/RedBean_IBeanFormatter.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/RedException/SQL.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/license.txt" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/scripts/RedBeanPHP5Beta/rb.php" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colleges.php" afterPath="$PROJECT_DIR$/colleges.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/colleges_departments.php" afterPath="$PROJECT_DIR$/colleges_departments.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test.php" afterPath="$PROJECT_DIR$/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uqu/db/DatabaseManager.php" afterPath="$PROJECT_DIR$/uqu/db/DatabaseManager.php" />
@@ -30,19 +22,21 @@
       <file leaf-file-name="DatabaseManager.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/uqu/db/DatabaseManager.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="510">
-              <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <state relative-caret-position="289">
+              <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="31" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="colleges.php" pinned="false" current-in-tab="false">
+      <file leaf-file-name="colleges.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/colleges.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1003">
-              <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-              <folding />
+            <state relative-caret-position="289">
+              <caret line="47" column="86" lean-forward="false" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
+              <folding>
+                <marker date="1508238548297" expanded="true" signature="728:790" ph="delete from " />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -50,37 +44,28 @@
       <file leaf-file-name="colleges_departments.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/colleges_departments.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="47" />
+            <state relative-caret-position="175">
+              <caret line="106" column="1" lean-forward="true" selection-start-line="106" selection-start-column="1" selection-end-line="117" selection-end-column="5" />
               <folding>
-                <marker date="1508235494018" expanded="true" signature="1337:1386" ph="update colle... " />
-                <marker date="1508235494018" expanded="true" signature="1337:1435" ph="update colle... " />
-                <marker date="1508235494018" expanded="true" signature="1337:1458" ph="update colle... " />
-                <marker date="1508235494018" expanded="true" signature="2048:2050" ph="select * fro... page" />
-                <marker date="1508235494018" expanded="true" signature="2081:2131" ph="SELECT * FRO... colleges_departments" />
-                <marker date="1508235494018" expanded="true" signature="2081:2132" ph="SELECT * FRO... colleges_departments" />
-                <marker date="1508235494018" expanded="true" signature="2464:2516" ph="delete from " />
-                <marker date="1508235494018" expanded="true" signature="2464:2517" ph="delete from " />
+                <marker date="1508238239812" expanded="true" signature="1337:1386" ph="update colle... " />
+                <marker date="1508238239812" expanded="true" signature="1337:1435" ph="update colle... " />
+                <marker date="1508238239812" expanded="true" signature="1337:1458" ph="update colle... " />
+                <marker date="1508238239812" expanded="true" signature="1790:1835" ph="SELECT * FRO... colleges_departments" />
+                <marker date="1508238239812" expanded="true" signature="1790:1836" ph="SELECT * FRO... colleges_departments" />
+                <marker date="1508238239812" expanded="true" signature="2080:2127" ph="delete from " />
+                <marker date="1508238239812" expanded="true" signature="2080:2128" ph="delete from " />
+                <marker date="1508238239812" expanded="true" signature="2080:2151" ph="delete from " />
+                <marker date="1508238239812" expanded="true" signature="2080:2224" ph="delete from " />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="MyTableFormatter.php" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/MyTableFormatter.php">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="340">
-              <caret line="20" column="2" lean-forward="false" selection-start-line="20" selection-start-column="2" selection-end-line="20" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="test.php" pinned="false" current-in-tab="true">
+      <file leaf-file-name="test.php" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+            <state relative-caret-position="153">
+              <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
               <folding />
             </state>
           </provider>
@@ -145,7 +130,6 @@
         <option value="$PROJECT_DIR$/register_form.html" />
         <option value="$PROJECT_DIR$/login.php" />
         <option value="$PROJECT_DIR$/colleges" />
-        <option value="$PROJECT_DIR$/colleges.php" />
         <option value="$PROJECT_DIR$/unit_status.php" />
         <option value="$PROJECT_DIR$/unit_file_types.php" />
         <option value="$PROJECT_DIR$/unit_service_type.php" />
@@ -153,6 +137,7 @@
         <option value="$PROJECT_DIR$/uqu/db/DatabaseManager.php" />
         <option value="$PROJECT_DIR$/colleges_departments.php" />
         <option value="$PROJECT_DIR$/test.php" />
+        <option value="$PROJECT_DIR$/colleges.php" />
       </list>
     </option>
   </component>
@@ -163,7 +148,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="69" />
     <option name="y" value="95" />
     <option name="width" value="1260" />
@@ -256,15 +241,15 @@
       <workItem from="1507791505745" duration="9951000" />
       <workItem from="1508133538078" duration="19309000" />
       <workItem from="1508226577399" duration="4022000" />
-      <workItem from="1508231592902" duration="2397000" />
+      <workItem from="1508231592902" duration="4465000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35679000" />
+    <option name="totallyTimeSpent" value="37747000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="744" extended-state="7" />
+    <frame x="-8" y="-8" width="1296" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22734375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -331,14 +316,15 @@
         <state relative-caret-position="1717">
           <caret line="101" column="9" lean-forward="true" selection-start-line="101" selection-start-column="9" selection-end-line="101" selection-end-column="9" />
           <folding>
-            <marker date="1508235494018" expanded="true" signature="1337:1386" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1435" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1458" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="2048:2050" ph="select * fro... page" />
-            <marker date="1508235494018" expanded="true" signature="2081:2131" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2081:2132" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2464:2516" ph="delete from " />
-            <marker date="1508235494018" expanded="true" signature="2464:2517" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="1337:1386" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1435" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1458" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1790:1835" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="1790:1836" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="2080:2127" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2128" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2151" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2224" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -403,7 +389,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1003">
           <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding />
+          <folding>
+            <marker date="1508238548297" expanded="true" signature="728:790" ph="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -452,14 +440,15 @@
         <state relative-caret-position="1683">
           <caret line="99" column="24" lean-forward="false" selection-start-line="99" selection-start-column="24" selection-end-line="99" selection-end-column="24" />
           <folding>
-            <marker date="1508235494018" expanded="true" signature="1337:1386" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1435" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1458" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="2048:2050" ph="select * fro... page" />
-            <marker date="1508235494018" expanded="true" signature="2081:2131" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2081:2132" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2464:2516" ph="delete from " />
-            <marker date="1508235494018" expanded="true" signature="2464:2517" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="1337:1386" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1435" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1458" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1790:1835" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="1790:1836" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="2080:2127" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2128" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2151" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2224" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -468,7 +457,9 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="952">
           <caret line="56" column="31" lean-forward="false" selection-start-line="56" selection-start-column="31" selection-end-line="56" selection-end-column="31" />
-          <folding />
+          <folding>
+            <marker date="1508238548297" expanded="true" signature="728:790" ph="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -477,14 +468,15 @@
         <state relative-caret-position="272">
           <caret line="21" column="34" lean-forward="false" selection-start-line="21" selection-start-column="34" selection-end-line="21" selection-end-column="34" />
           <folding>
-            <marker date="1508235494018" expanded="true" signature="1337:1386" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1435" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1458" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="2048:2050" ph="select * fro... page" />
-            <marker date="1508235494018" expanded="true" signature="2081:2131" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2081:2132" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2464:2516" ph="delete from " />
-            <marker date="1508235494018" expanded="true" signature="2464:2517" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="1337:1386" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1435" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1458" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1790:1835" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="1790:1836" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="2080:2127" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2128" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2151" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2224" ph="delete from " />
           </folding>
         </state>
       </provider>
@@ -533,14 +525,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/colleges.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1003">
-          <caret line="59" column="1" lean-forward="false" selection-start-line="59" selection-start-column="1" selection-end-line="59" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/MyTableFormatter.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="340">
@@ -551,34 +535,45 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/colleges_departments.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="89" column="47" lean-forward="false" selection-start-line="89" selection-start-column="17" selection-end-line="89" selection-end-column="47" />
+        <state relative-caret-position="175">
+          <caret line="106" column="1" lean-forward="true" selection-start-line="106" selection-start-column="1" selection-end-line="117" selection-end-column="5" />
           <folding>
-            <marker date="1508235494018" expanded="true" signature="1337:1386" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1435" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="1337:1458" ph="update colle... " />
-            <marker date="1508235494018" expanded="true" signature="2048:2050" ph="select * fro... page" />
-            <marker date="1508235494018" expanded="true" signature="2081:2131" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2081:2132" ph="SELECT * FRO... colleges_departments" />
-            <marker date="1508235494018" expanded="true" signature="2464:2516" ph="delete from " />
-            <marker date="1508235494018" expanded="true" signature="2464:2517" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="1337:1386" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1435" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1337:1458" ph="update colle... " />
+            <marker date="1508238239812" expanded="true" signature="1790:1835" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="1790:1836" ph="SELECT * FRO... colleges_departments" />
+            <marker date="1508238239812" expanded="true" signature="2080:2127" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2128" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2151" ph="delete from " />
+            <marker date="1508238239812" expanded="true" signature="2080:2224" ph="delete from " />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/uqu/db/DatabaseManager.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="510">
-          <caret line="36" column="0" lean-forward="true" selection-start-line="36" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+        <state relative-caret-position="289">
+          <caret line="23" column="31" lean-forward="false" selection-start-line="23" selection-start-column="26" selection-end-line="23" selection-end-column="31" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="18" column="51" lean-forward="false" selection-start-line="18" selection-start-column="51" selection-end-line="18" selection-end-column="51" />
+        <state relative-caret-position="153">
+          <caret line="9" column="22" lean-forward="false" selection-start-line="9" selection-start-column="22" selection-end-line="9" selection-end-column="22" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/colleges.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="47" column="86" lean-forward="false" selection-start-line="47" selection-start-column="86" selection-end-line="47" selection-end-column="86" />
+          <folding>
+            <marker date="1508238548297" expanded="true" signature="728:790" ph="delete from " />
+          </folding>
         </state>
       </provider>
     </entry>
