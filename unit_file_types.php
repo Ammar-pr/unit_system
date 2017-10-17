@@ -73,6 +73,8 @@ class unit_file_types
     {
         return $this->unit_id;
     }
+
+
     public  function get_unit_file_type_object()
     {
 
@@ -106,9 +108,9 @@ class unit_file_types
 
 
     function update(){
-
+            echo "result of extesion".$this->getExtension();
         try {
-            $status= R::exec( 'update unitfiletype set name="'.$this->getName().'"   where id="'.$this->getId().'"' );
+            $status= R::exec( 'update unitfiletype set extension="'.$this->getExtension().'"   where id="'.$this->getId().'"' );
             if($status==0){
                 echo "can't update the record ";
             }
@@ -122,15 +124,16 @@ class unit_file_types
 
 
     function insert() {
-        $colleges= R::dispense('unitfiletype');
+        $unit_file_type= R::dispense('unitfiletype');
 
 
 
-        $colleges->name=$this->getName();
+        $unit_file_type->extension=$this->getExtension();
+        $unit_file_type->unit_id=$this->getUnitId();
 
 
-        $id_redbean_colleges_id=  R::store($colleges); // store is done
-        if($id_redbean_colleges_id>0){
+        $id_redbean_unit_file_type_id=  R::store($unit_file_type); // store is done
+        if($id_redbean_unit_file_type_id>0){
 
         }else {
             echo "the data cannot be inserted in the table unit file type";

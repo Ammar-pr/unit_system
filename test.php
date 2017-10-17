@@ -17,12 +17,12 @@ class test
      public function test_update_colleges_department(){
          error_reporting(E_ALL);
          ini_set('display_errors', 1);
-     $te_object= new  unit_file_types('1','','sfdfd');
+     $te_object= new  unit_file_types('1','mp3');
          $te_object->setId('1');
         // $te_object->setCollegeId('1');
 
 
-         $te_object->delete_unit_file_type_object();
+         $te_object->insert();
                   }
 
 
