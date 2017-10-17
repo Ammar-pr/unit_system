@@ -5,7 +5,7 @@
  * Date: 15/10/17
  * Time: 02:40 م
  */
-require_once 'scripts/RedBeanPHP5Beta/RedBean_IBeanFormatter.php';
+require_once 'scripts/RedBeanPHP/RedBean_IBeanFormatter.php';
 class colleges_departments
 {
 
@@ -89,16 +89,18 @@ try {
 
 public  function get_colleges_depratment_object()
 {
+    R::setup( 'mysql:host=localhost;dbname=unit',
+        'root', 'dwddwddwd' );
     // to check specfic depratment for any clolleges
     try {
+        R::setup( 'mysql:host=localhost;dbname=unit',
+            'root', 'dwddwddwd' );
         $id=$this->getDeptId();
       //  R::getIDField('colleges_departments');
-    $row   = R::find( 'colleges_departments', ' dept_id =1 ');
+   // $row   = R::find( 'colleges_departments', ' dept_id ="'.$id.'" ');
+        $row=    R::getrow( 'SELECT * FROM colleges_departments WHERE dept_id= 1 ');
         $colleges_dep = R::convertToBeans( 'colleges_departments', $row );
 
-        foreach($row as $object){
-            echo $object;
-        }
 
 }catch (SQLiteException $sq){
     $sq->getMessage();
@@ -108,12 +110,25 @@ public  function get_colleges_depratment_object()
 
 
     public function delete_colleges_depratment_object() {
+        R::setup( 'mysql:host=localhost;dbname=unit',
+            'root', 'dwddwddwd' );
         try {
-            R::exec( 'delete from  colleges_departments    WHERE dept_id = "'.$this->getDeptId().'"' );
+          if(  R::exec( 'delete from  colleges_departments    WHERE dept_id =1 ')){
+
+          }else{
+              echo"there is issue with delete";
+          }
         }catch (SQLiteException $sq){
             $sq->getMessage();
         }
     }
 
+
+
+    public function tests () {
+
+    }
+
+
+
 }
-?>

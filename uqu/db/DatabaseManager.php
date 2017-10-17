@@ -1,45 +1,36 @@
-<?php
+﻿<?php
 /**
  * Created by PhpStorm.
  * User: GRENADY
  * Date: 15/10/17
  * Time: 09:50 م
  */
-require_once 'scripts/RedBeanPHP5Beta/rb.php';
-class DatabaseManager
+require_once 'scripts/RedBeanPHP/rb.php';
+
+
+
+
+
+
+
+$con=mysqli_connect("localhost","root","dwddwddwd","unit");
+// Check connection
+if (mysqli_connect_errno())
 {
-
-
-
-
-    public function __construct()
-    {
-
-       $this->getConnection();
-
-    }
-
-    public function getConnection() {
-
-
-
-
-
-            R::setup( 'mysql:host=localhost;dbname=unit',
-                'root', 'dwddwddwd' );
-
-
-
-
-        $isConnected = R::testConnection();
-
-
-         return $isConnected;
-
-    }
-
+    echo "Failed to connect to MySQL: " . mysqli_connect_error();
 }
 
+// ...some PHP code for database "my_db"...
 
-$db=new DatabaseManager;
+// Change database to "test"
+mysqli_select_db($con,"unit");
+
+// ...some PHP code for database "test"...
+    R::setup('mysql:host=' . localhost . ';dbname=' . 'unit', 'root', 'dwddwdwd');
+
+mysqli_close($con);
+
+
+
 ?>
+

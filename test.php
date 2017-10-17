@@ -16,7 +16,7 @@ class test
          ini_set('display_errors', 1);
      $te_object= new  colleges_departments('1','1','sdf');
 
-         $te_object->delete_colleges_depratment_object();
+         $te_object->get_colleges_depratment_object();
                   }
 
 
