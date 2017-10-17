@@ -110,6 +110,18 @@ class users_roles
             $sq->getMessage();
         }
     }
+    public function delete_user_role_All_records() {
+
+        try {
+            if(  R::exec( 'delete  from  usersroles ')==1){
+
+            }else{
+                echo"there is issue with delete";
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
 
 
     function update(){

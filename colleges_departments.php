@@ -16,7 +16,7 @@ class colleges_departments
 
 
 
-    function __construct($dept_id,$college_id,$department_name) {
+     function __construct($dept_id,$college_id,$department_name) {
         $this->college_id = $college_id;
         $this->department_name = $department_name;
         $this->dept_id = $dept_id;
@@ -117,6 +117,20 @@ public  function get_colleges_depratment_object()
           }else{
               echo"there is issue with delete";
           }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
+    public function delete_colleges_depratment_All_records() {
+
+        try {
+            if(  R::exec( 'delete from  collegesdepartments  ')==1){
+
+            }else{
+                echo"there is issue with delete";
+            }
         }catch (SQLiteException $sq){
             $sq->getMessage();
         }

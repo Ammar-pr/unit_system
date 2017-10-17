@@ -71,6 +71,22 @@ class colleges {
     }
 
 
+
+    public function delete_college_All_records() {
+
+        try {
+            if(  R::exec( 'delete from  colleges  ')==1){
+
+            }else{
+                echo"there is issue with delete";
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
+
     function update(){
 
         try {

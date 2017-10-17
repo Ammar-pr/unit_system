@@ -112,6 +112,37 @@ class unit_service_type
     }
 
 
+
+
+
+
+    public function delete_unit_service_All_records() {
+
+        try {
+            if(  R::exec( 'delete from  unitservicetype  ')==1){
+
+            }else{
+                echo"there is issue with delete";
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+    public function delete_user_role_All_object() {
+
+        try {
+            if(  R::exec( 'delete  from  usersroles ')==1){
+
+            }else{
+                echo"there is issue with delete";
+            }
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
+
+
     function update(){
 
         try {
