@@ -105,5 +105,15 @@ public  function get_colleges_depratment_object()
 }
     }
 
+
+
+    public function delete_colleges_depratment_object() {
+        try {
+            R::exec( 'delete from  colleges_departments    WHERE dept_id = "'.$this->getDeptId().'"' );
+        }catch (SQLiteException $sq){
+            $sq->getMessage();
+        }
+    }
+
 }
 ?>
