@@ -5,9 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="d86c5b69-7839-4670-bda9-b3a1701d19ce" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/scripts/test.php" afterPath="$PROJECT_DIR$/scripts/test.php" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/uqu/db/DatabaseManager.php" afterPath="$PROJECT_DIR$/uqu/db/DatabaseManager.php" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/users_roles.php" afterPath="$PROJECT_DIR$/users_roles.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -31,15 +29,15 @@
       <file leaf-file-name="users_roles.php" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/users_roles.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="338">
-              <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+            <state relative-caret-position="372">
+              <caret line="151" column="115" lean-forward="false" selection-start-line="151" selection-start-column="55" selection-end-line="151" selection-end-column="115" />
               <folding>
-                <marker date="1508306643870" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
-                <marker date="1508306643870" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
-                <marker date="1508306643870" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
-                <marker date="1508306643870" expanded="true" signature="2169:2226" ph="delete from " />
-                <marker date="1508306643870" expanded="true" signature="2499:2523" ph="delete from " />
-                <marker date="1508306643870" expanded="true" signature="2772:2906" ph="update users... " />
+                <marker date="1508316826800" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
+                <marker date="1508316826800" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
+                <marker date="1508316826800" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
+                <marker date="1508316826800" expanded="true" signature="2157:2214" ph="delete from " />
+                <marker date="1508316826800" expanded="true" signature="2487:2511" ph="delete from " />
+                <marker date="1508316826800" expanded="true" signature="2760:2894" ph="update users... " />
               </folding>
             </state>
           </provider>
@@ -200,15 +198,15 @@
       <workItem from="1507791505745" duration="9951000" />
       <workItem from="1508133538078" duration="19309000" />
       <workItem from="1508226577399" duration="4022000" />
-      <workItem from="1508231592902" duration="23710000" />
+      <workItem from="1508231592902" duration="24510000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="56992000" />
+    <option name="totallyTimeSpent" value="57792000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1296" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1296" height="660" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22734375" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -343,12 +341,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1508306643870" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="2169:2226" ph="delete from " />
-            <marker date="1508306643870" expanded="true" signature="2499:2523" ph="delete from " />
-            <marker date="1508306643870" expanded="true" signature="2772:2906" ph="update users... " />
+            <marker date="1508316826800" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="2157:2214" ph="delete from " />
+            <marker date="1508316826800" expanded="true" signature="2487:2511" ph="delete from " />
+            <marker date="1508316826800" expanded="true" signature="2760:2894" ph="update users... " />
           </folding>
         </state>
       </provider>
@@ -442,12 +440,12 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <marker date="1508306643870" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="2169:2226" ph="delete from " />
-            <marker date="1508306643870" expanded="true" signature="2499:2523" ph="delete from " />
-            <marker date="1508306643870" expanded="true" signature="2772:2906" ph="update users... " />
+            <marker date="1508316826800" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="2157:2214" ph="delete from " />
+            <marker date="1508316826800" expanded="true" signature="2487:2511" ph="delete from " />
+            <marker date="1508316826800" expanded="true" signature="2760:2894" ph="update users... " />
           </folding>
         </state>
       </provider>
@@ -732,15 +730,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/users_roles.php">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="338">
-          <caret line="110" column="12" lean-forward="false" selection-start-line="110" selection-start-column="12" selection-end-line="110" selection-end-column="12" />
+        <state relative-caret-position="372">
+          <caret line="151" column="115" lean-forward="false" selection-start-line="151" selection-start-column="55" selection-end-line="151" selection-end-column="115" />
           <folding>
-            <marker date="1508306643870" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
-            <marker date="1508306643870" expanded="true" signature="2169:2226" ph="delete from " />
-            <marker date="1508306643870" expanded="true" signature="2499:2523" ph="delete from " />
-            <marker date="1508306643870" expanded="true" signature="2772:2906" ph="update users... " />
+            <marker date="1508316826800" expanded="true" signature="1298:1352" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="1773:1797" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="1773:1798" ph="SELECT * FRO... usersroles" />
+            <marker date="1508316826800" expanded="true" signature="2157:2214" ph="delete from " />
+            <marker date="1508316826800" expanded="true" signature="2487:2511" ph="delete from " />
+            <marker date="1508316826800" expanded="true" signature="2760:2894" ph="update users... " />
           </folding>
         </state>
       </provider>

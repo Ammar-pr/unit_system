@@ -108,7 +108,7 @@ class users_roles
             $row = R::getAll("SELECT * FROM usersroles ");
             R::convertToBeans( 'usersroles', $row );
             if(count($row)>0){
-            
+
                 return $row;
             }else {
 
