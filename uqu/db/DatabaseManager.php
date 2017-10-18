@@ -21,8 +21,8 @@ class DatabaseManager {
         try {
 
            if( !R::testConnection())
-               R::setup( 'mysql:host=localhost;dbname=unit',
-                   'root', 'dwddwddwd' );
+               R::setup( 'mysql:host=localhost;dbname=dsr_amnatto',
+                   'dsr_amnatto', 'mVNeKCEG]b@W' );
 
         }catch (\RedBeanPHP\RedException $rd)
         {
