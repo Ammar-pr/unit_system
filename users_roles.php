@@ -162,7 +162,7 @@ class users_roles
     }
 
 
-    function insert() {
+    function insert1() {
         $users_roles= R::dispense('usersroles');
 
 
@@ -188,6 +188,26 @@ class users_roles
 
 
 
+
+    function insert() {
+        $post = R::dispense( 'aaa' );
+        $post->title = 'My holiday';
+        $id = R::store( $post );
+
+
+    }
+
+
+   function load ($id,$table) {
+       $post = R::load( $table, $id );
+         echo $post->title;
+       echo "<br>";
+
+       echo $post->id;
+         echo "<br>";
+
+
+   }
 
 
 

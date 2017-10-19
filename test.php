@@ -25,7 +25,7 @@ class test
         // $te_object->setCollegeId('1');
 
 
-         $te_object->get_user_role_object_list();
+         $te_object->load('1','post');
 
                   }
 
