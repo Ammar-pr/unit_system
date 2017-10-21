@@ -156,20 +156,49 @@ class users_roles
         }
 
 
-    }
+
 }
 
 
 function update ()
+
 {
-// load the ojbect first ,
+
+    if(!R::testConnection()){
+        exit("data base not connect please check ...");
+    }
 
 
-    
+    R::ext('xdispense', function ($table_name){
+        return R::getRedBean()->dispense($table_name)  ;
+    });
 
+    $users_roles= R::xdispense('user_roles');
+
+
+    $id_redbean_user_role_id=0;
+    $users_roles->role_number=$this->getRoleNumber();
+    $users_roles->role_name=$this->getRoleName();
+   $users_roles->id=$this->getId();
+    $id_redbean_user_role_id=  R::store($users_roles); // store is done
+
+    if($id_redbean_user_role_id>0){
+        echo $id_redbean_user_role_id;
+
+    }else{
 }
-    function insert1() {
-        $users_roles= R::dispense('usersroles');
+}
+    function creat() {
+
+    if(!R::testConnection()){
+        exit("data base not connect please check ...");
+    }
+
+     R::ext('xdispense', function ($table_name){
+       return R::getRedBean()->dispense($table_name)  ;
+     });
+
+        $users_roles= R::xdispense('user_roles');
 
 
 
