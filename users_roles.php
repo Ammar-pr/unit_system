@@ -113,11 +113,14 @@ class users_roles
     }
 
 
-    public function delete_user_role_object()
+    public function delete_user_role_object1()
     {
 
         try {
             if (R::exec('delete from  usersroles    WHERE id ="' . $this->getId() . '" ') == 1) {
+
+                $user_r=new users_roles();
+
 
             } else {
                 echo "there is issue with delete";
@@ -125,6 +128,19 @@ class users_roles
         } catch (SQLiteException $sq) {
             $sq->getMessage();
         }
+    }
+    public function delete_user_role_object()
+    {
+
+      $user=  R::findOne("user_roles",'id= ?',array($this->getId()));
+
+      if(count($user)!=0) {
+          R::trash($user);
+          echo "delete is done ";
+      }else {
+          echo "cannot delete becase the record is not exist ";
+      }
+
     }
 
     public function delete_user_role_All_records()
@@ -142,22 +158,6 @@ class users_roles
     }
 
 
-    function update1()
-    {
-
-        try {
-            $status = R::exec('update usersroles set role_number="' . $this->getRoleNumber() . '" ,role_name= "' . $this->getRoleName() . '"    where id="' . $this->getId() . '" ');
-            if ($status == 0) {
-                echo "can't update the record ";
-            }
-            R::close();
-        } catch (SQLiteException $sq) {
-            $sq->getMessage();
-        }
-
-
-
-}
 
 
 function update ()
@@ -189,7 +189,7 @@ $role_ob=  R::load('user_roles',$this->getId());
  }
 
 }
-    function creat() {
+    function create() {
 
     if(!R::testConnection()){
         exit("data base not connect please check ...");
@@ -225,22 +225,20 @@ $role_ob=  R::load('user_roles',$this->getId());
 
 
 
-    function insert() {
-        $post = R::dispense( 'aaa' );
-        $post->title = 'My holiday';
-        $id = R::store( $post );
 
-
-    }
 
 
    function load ($id,$table) {
-       $post = R::load( $table, $id );
-         echo $post->title;
-       echo "<br>";
+       $user_role_object = R::load( $table, $id );
+        if(count($user_role_object)==1){
 
-       echo $post->id;
-         echo "<br>";
+            return null;
+       }else if(count($user_role_object)>1){
+
+            return $user_role_object;
+        }
+
+
 
 
    }
