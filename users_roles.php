@@ -15,15 +15,12 @@ class users_roles
     protected $role_name;
 
 
-
-    function __construct($role_number,$role_name,$id) {
+    function __construct($role_number, $role_name, $id)
+    {
         $this->id = $id;
         $this->role_number = $role_number;
         $this->role_name = $role_name;
     }
-
-
-
 
 
     /**
@@ -76,92 +73,101 @@ class users_roles
     }
 
 
-
-
-
-    public  function get_user_role_object()
+    public function get_user_role_object()
     {
 
         // to check specfic depratment for any clolleges
         try {
-            $row = R::getAll("SELECT * FROM usersroles where id='".$this->getId()."'");
-            R::convertToBeans( 'user', $row );
-            if(count($row)>0){
+            $row = R::getAll("SELECT * FROM usersroles where id='" . $this->getId() . "'");
+            R::convertToBeans('user', $row);
+            if (count($row) > 0) {
 
                 return $row;
-            }else {
+            } else {
 
                 return null;
             }
-        }catch (SQLiteException $sq){
+        } catch (SQLiteException $sq) {
             $sq->getMessage();
         }
     }
 
 
-
-    public  function get_user_role_object_list()
+    public function get_user_role_object_list()
     {
 
         // to check specfic depratment for any clolleges
         try {
             $row = R::getAll("SELECT * FROM usersroles ");
-            R::convertToBeans( 'usersroles', $row );
-            if(count($row)>0){
+            R::convertToBeans('usersroles', $row);
+            if (count($row) > 0) {
 
                 return $row;
-            }else {
+            } else {
 
                 return null;
             }
-        }catch (SQLiteException $sq){
+        } catch (SQLiteException $sq) {
             $sq->getMessage();
         }
     }
 
 
-    public function delete_user_role_object() {
+    public function delete_user_role_object()
+    {
 
         try {
-            if(  R::exec( 'delete from  usersroles    WHERE id ="'.$this->getId().'" ')==1){
+            if (R::exec('delete from  usersroles    WHERE id ="' . $this->getId() . '" ') == 1) {
 
-            }else{
-                echo"there is issue with delete";
+            } else {
+                echo "there is issue with delete";
             }
-        }catch (SQLiteException $sq){
+        } catch (SQLiteException $sq) {
             $sq->getMessage();
         }
     }
-    public function delete_user_role_All_records() {
+
+    public function delete_user_role_All_records()
+    {
 
         try {
-            if(  R::exec( 'delete  from  usersroles ')==1){
+            if (R::exec('delete  from  usersroles ') == 1) {
 
-            }else{
-                echo"there is issue with delete";
+            } else {
+                echo "there is issue with delete";
             }
-        }catch (SQLiteException $sq){
+        } catch (SQLiteException $sq) {
             $sq->getMessage();
         }
     }
 
 
-    function update(){
+    function update1()
+    {
 
         try {
-            $status= R::exec( 'update usersroles set role_number="'.$this->getRoleNumber().'" ,role_name= "'.$this->getRoleName().'"    where id="'.$this->getId().'" ' );
-            if($status==0){
+            $status = R::exec('update usersroles set role_number="' . $this->getRoleNumber() . '" ,role_name= "' . $this->getRoleName() . '"    where id="' . $this->getId() . '" ');
+            if ($status == 0) {
                 echo "can't update the record ";
             }
             R::close();
-        }catch (SQLiteException $sq){
+        } catch (SQLiteException $sq) {
             $sq->getMessage();
         }
 
 
     }
+}
 
 
+function update ()
+{
+// load the ojbect first ,
+
+
+    
+
+}
     function insert1() {
         $users_roles= R::dispense('usersroles');
 
