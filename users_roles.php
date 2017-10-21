@@ -175,18 +175,19 @@ function update ()
 
     $users_roles= R::xdispense('user_roles');
 
+$role_ob=  R::load('user_roles',$this->getId());
+ if($role_ob->getId()!=0){
+     // will never come to this code unless the id is exist -
+    echo "just true ";
+     $users_roles->role_number=$this->getRoleNumber();
+     $users_roles->role_name=$this->getRoleName();
+     $users_roles->id=$this->getId();
+      R::store($users_roles); //
 
-    $id_redbean_user_role_id=0;
-    $users_roles->role_number=$this->getRoleNumber();
-    $users_roles->role_name=$this->getRoleName();
-   $users_roles->id=$this->getId();
-    $id_redbean_user_role_id=  R::store($users_roles); // store is done
+ }else {
+     echo "cannot update becuase the user id not exist";
+ }
 
-    if($id_redbean_user_role_id>0){
-        echo $id_redbean_user_role_id;
-
-    }else{
-}
 }
     function creat() {
 
