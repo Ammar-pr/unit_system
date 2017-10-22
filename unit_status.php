@@ -223,15 +223,15 @@ protected  $description;
                 // will never come to this code unless the id is exist -
 
                 $unit_status->status_name=$this->getStatusName();
-                $unit_status->description=$this->getDescription();
+                $unit_status->status_code=$this->getStatusCode();
                 $unit_status->description=$this->getDescription();
 
                 $unit_status->id=$this->getId();
 
-                R::store($users_roles); //
+                R::store($unit_status); //
 
             }else {
-                echo "cannot update becuase the user id not exist";
+                echo "cannot update becuase the  id not exist";
             }
 
         }catch (Exception $ex){
@@ -241,7 +241,7 @@ protected  $description;
 
         }
     }
-    function create_user_role() {
+    function create_unit_status() {
 
         if(!R::testConnection()){
             exit("data base not connect please check ...");
@@ -251,15 +251,17 @@ protected  $description;
             return R::getRedBean()->dispense($table_name)  ;
         });
 
-        $users_roles= R::xdispense('user_roles');
+        $unit_status= R::xdispense('unit_status');
 
 
 
-        $users_roles->role_number=$this->getRoleNumber();
-        $users_roles->role_name=$this->getRoleName();
+        $unit_status->status_name=$this->getStatusName();
+        $unit_status->status_code=$this->getStatusCode();
+        $unit_status->description=$this->getDescription();
+
         //  R::findOne("user_roles","name='' , role_number=''")
         try {
-            R::store($users_roles); // store is done
+            R::store($unit_status); // store is done
 
         }catch (Exception $r){
 

@@ -79,120 +79,142 @@ class unit_service_type
     }
 
 //unitservicetype
-    public  function get_unit_service_type_object()
+
+    public function get_unit_service_type()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+
+        $unit_service_type=  R::findOne("unit_service_type",'id= ?',array($this->getId()));
+
+        if(count($unit_service_type)!=0) {
+            return $unit_service_type;
+        }else {
+
+            return null;
+        }
+    }
+
+
+    public function get_unit_service_type_list()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $unit_service_type_list = R::findAll('unit_service_type', ' ORDER BY id    ');
+        if(count($unit_service_type_list)>0){
+
+            return   $unit_service_type_list;
+        }else {
+            return null;
+
+        }
+
+    }
+
+
+
+    public function delete_unit_service_type()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $unit_service_type=  R::findOne("unit_service_type",'id= ?',array($this->getId()));
+
+        if(count($unit_service_type)!=0) {
+            R::trash($unit_service_type);
+            echo "delete is done ";
+        }else {
+            echo "cannot delete becase the record is not exist ";
+        }
+
+    }
+
+    public function delete_unit_status_list()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $unit_status_list = R::findAll('unit_service_type', ' ORDER BY id    ');
+
+        if (count($unit_status_list) > 0) {
+            R::trashAll($unit_status_list);
+            echo "data table unit_service_type deleted";
+        }else {
+            echo "the table is empty , empty table  ";
+        }
+    }
+
+
+
+    function update_unit_service_type ()
+
     {
 
-        // to check specfic depratment for any clolleges
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+
+
+        R::ext('xdispense', function ($table_name){
+            return R::getRedBean()->dispense($table_name)  ;
+        });
+
+        $unit_service_type= R::xdispense('unit_service_type');
+
+        $unit_service_type_ob=  R::load('unit_status',$this->getId());
         try {
-            $row = R::getAll("SELECT * FROM unitservicetype where id='".$this->getId()."'");
-            R::convertToBeans( 'user', $row );
-            if(count($row)>0){
-                echo "the lenght for the row is :- ";
-           echo count($row);
-                return $row;
+            if($unit_service_type_ob->getId()!=0){
+                // will never come to this code unless the id is exist -
+
+                $unit_service_type->name=$this->getName();
+                $unit_service_type->description=$this->getDescription();
+
+
+                $unit_service_type->id=$this->getId();
+
+                R::store($unit_service_type); //
+
             }else {
-                return null;
+                echo "cannot update becuase the  id not exist";
             }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
 
-    public function delete_unit_service_type_object() {
-
-        try {
-            if(  R::exec( 'delete from  unitservicetype    WHERE id ="'.$this->getId().'" ')==1){
-
-            }else{
-                echo"there is issue with delete ...";
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
-
-
-    public  function get_unit_servic_type_object_list()
-    {
-
-        // to check specfic depratment for any clolleges
-        try {
-            $row = R::getAll("SELECT * FROM unitservicetype ");
-            R::convertToBeans( 'unitservicetype', $row );
-            if(count($row)>0){
-
-                return $row;
-            }else {
-
-                return null;
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
-
-
-
-    public function delete_unit_service_All_records() {
-
-        try {
-            if(  R::exec( 'delete from  unitservicetype  ')==1){
-
-            }else{
-                echo"there is issue with delete";
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
-    public function delete_user_role_All_objects() {
-
-        try {
-            if(  R::exec( 'delete  from  usersroles ')==1){
-
-            }else{
-                echo"there is issue with delete";
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
-
-
-
-    function update(){
-
-        try {
-            $status= R::exec( 'update unitservicetype set name="'.$this->getName().'" , description="'.$this->getDescription().'"   where id="'.$this->getId().'"' );
-            if($status==0){
-                echo "can't update the record ";
-            }
+        }catch (Exception $ex){
+            echo "Duplicate entry";
+        }finally {
             R::close();
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
+
+        }
+    }
+    function create_unit_service_type() {
+
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
         }
 
+        R::ext('xdispense', function ($table_name){
+            return R::getRedBean()->dispense($table_name)  ;
+        });
 
-    }
-
-
-    function insert() {
-        $unit_service_type= R::dispense('unitservicetype');
+        $unit_service_type= R::xdispense('unit_service_type');
 
 
 
         $unit_service_type->name=$this->getName();
         $unit_service_type->description=$this->getDescription();
 
+        try {
+            R::store($unit_service_type); // store is done
 
-        $id_redbean_unit_service_type_id=  R::store($unit_service_type); // store is done
-        if($id_redbean_unit_service_type_id>0){
+        }catch (Exception $r){
 
-        }else {
-            echo "the data cannot be inserted in the table unit service type";
-        }
-    }
+            echo "Duplicate entry [Exception ] ";
 
+        }finally {
+            R::close();
+
+        }  }
 
 
 }
