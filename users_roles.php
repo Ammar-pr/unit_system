@@ -95,43 +95,18 @@ class users_roles
 
     public function get_user_role_object_list()
     {
+        $roles_list = R::findAll('user_roles', ' ORDER BY id    ');
+        if()
 
-        // to check specfic depratment for any clolleges
-        try {
-            $row = R::getAll("SELECT * FROM usersroles ");
-            R::convertToBeans('usersroles', $row);
-            if (count($row) > 0) {
-
-                return $row;
-            } else {
-
-                return null;
-            }
-        } catch (SQLiteException $sq) {
-            $sq->getMessage();
-        }
     }
 
 
-    public function delete_user_role_object1()
-    {
 
-        try {
-            if (R::exec('delete from  usersroles    WHERE id ="' . $this->getId() . '" ') == 1) {
-
-                $user_r=new users_roles();
-
-
-            } else {
-                echo "there is issue with delete";
-            }
-        } catch (SQLiteException $sq) {
-            $sq->getMessage();
-        }
-    }
     public function delete_user_role_object()
     {
-
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
       $user=  R::findOne("user_roles",'id= ?',array($this->getId()));
 
       if(count($user)!=0) {
@@ -145,15 +120,16 @@ class users_roles
 
     public function delete_user_role_All_records()
     {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $roles_list = R::findAll('user_roles', ' ORDER BY id    ');
 
-        try {
-            if (R::exec('delete  from  usersroles ') == 1) {
-
-            } else {
-                echo "there is issue with delete";
-            }
-        } catch (SQLiteException $sq) {
-            $sq->getMessage();
+        if (count($roles_list) > 0) {
+            R::trashAll($roles_list);
+            echo "data table user_roles deleted";
+        }else {
+            echo "the table is empty , empty table  ";
         }
     }
 
