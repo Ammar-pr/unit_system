@@ -131,15 +131,15 @@ class unit_service_type
 
     }
 
-    public function delete_unit_status_list()
+    public function delete_unit_service_type_list()
     {
         if(!R::testConnection()){
             exit("data base not connect please check ...");
         }
-        $unit_status_list = R::findAll('unit_service_type', ' ORDER BY id    ');
+        $unit_service_type_list = R::findAll('unit_service_type', ' ORDER BY id    ');
 
-        if (count($unit_status_list) > 0) {
-            R::trashAll($unit_status_list);
+        if (count($unit_service_type_list) > 0) {
+            R::trashAll($unit_service_type_list);
             echo "data table unit_service_type deleted";
         }else {
             echo "the table is empty , empty table  ";
@@ -163,7 +163,7 @@ class unit_service_type
 
         $unit_service_type= R::xdispense('unit_service_type');
 
-        $unit_service_type_ob=  R::load('unit_status',$this->getId());
+        $unit_service_type_ob=  R::load('unit_service_type',$this->getId());
         try {
             if($unit_service_type_ob->getId()!=0){
                 // will never come to this code unless the id is exist -

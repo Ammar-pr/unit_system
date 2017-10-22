@@ -18,13 +18,9 @@ class test
 
 
      public function test_update_colleges_department(){
-         error_reporting(E_ALL);
-         ini_set('display_errors', 1);
-     $te_object= new  unit_service_type('ccc','2344354');
-        // $te_object->setId('2');
-        // $te_object->setCollegeId('1');
+            $users_roles= new users_roles ();
 
-         $te_object->create_unit_status();
+         users_roles::delete('47');
                   }
 
 
