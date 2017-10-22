@@ -28,9 +28,9 @@ class unit_file_types
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec('UPDATE unit_file_type SET unit_id="'.$unit_id.'" ,  extension="'.$extension.'" WHERE id = "' . $id . '" ');
+            R::exec(" UPDATE `unit_file_type` SET `unit_id` = '$unit_id', `extension` = '$extension' WHERE `unit_file_type`.`id` = '$id'");
         } else {
-            R::exec('INSERT INTO unit_file_type (extension) VALUES ("' . $extension . '")');
+            R::exec("INSERT INTO `unit_file_type` (`id`, `unit_id`, `extension`) VALUES (NULL, NULL, '$extension')");
         }
 
     }
@@ -39,7 +39,7 @@ class unit_file_types
     {
 
         if ($id > 0) {
-            return R::exec('select * from  unit_file_type  WHERE id = "' . $id . '" ');
+            return R::exec("SELECT * FROM `unit_file_type` WHERE id='$id'");
         }
 
     }
@@ -48,7 +48,7 @@ class unit_file_types
     {
 
 
-        R::exec('select * from  unit_file_type  ');
+        R::exec("SELECT * FROM `unit_file_type`");
 
 
     }
@@ -56,14 +56,14 @@ class unit_file_types
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec('delete  from  unit_file_type  WHERE id = "' . $id . '" ');
+            return R::exec("DELETE FROM `unit_file_type` WHERE id ='$id' ");
         }
     }
 
     public function deleteAll()
     {
 
-        return R::exec('delete  from  unit_file_type   ');
+        return R::exec("DELETE FROM `unit_file_type` ");
 
     }
 

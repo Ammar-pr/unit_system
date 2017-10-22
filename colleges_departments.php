@@ -28,9 +28,9 @@ class colleges_departments
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec('UPDATE colleges_departments SET college_id="'.$college_id.'" ,  department_name="'.$department_name.'" WHERE id = "'.$id.'" ');
+            R::exec(" UPDATE `colleges_departments` SET `college_id` = '$college_id', `department_name` = '$department_name' WHERE `colleges_departments`.`id` = '$id'");
         } else {
-            R::exec('INSERT INTO colleges_departments (department_name) VALUES ("'.$department_name .'")');
+            R::exec("INSERT INTO `colleges_departments` (`id`, `college_id`, `department_name`) VALUES (NULL, NULL, '$department_name')");
         }
 
     }
@@ -39,7 +39,7 @@ class colleges_departments
     {
 
         if ($id > 0) {
-            return R::exec('select * from  colleges_departments  WHERE id = "' . $id . '" ');
+            return R::exec("SELECT * FROM `colleges_departments` WHERE id='$id'");
         }
 
     }
@@ -48,7 +48,7 @@ class colleges_departments
     {
 
 
-        R::exec('select * from  colleges_departments  ');
+        R::exec("SELECT * FROM `colleges_departments`");
 
 
     }
@@ -56,14 +56,14 @@ class colleges_departments
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec('delete  from  colleges_departments  WHERE id = "' . $id . '" ');
+            return R::exec("DELETE FROM `colleges_departments` WHERE id ='$id' ");
         }
     }
 
     public function deleteAll()
     {
 
-        return R::exec('delete  from  colleges_departments   ');
+        return R::exec("DELETE FROM `colleges_departments` ");
 
     }
 

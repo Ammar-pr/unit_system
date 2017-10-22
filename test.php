@@ -18,9 +18,9 @@ class test
 
 
      public function test_update_colleges_department(){
-            $unit_file_types_object= new unit_file_types ();
+            $colleges_departments_test =new users_roles ();
 
-         $unit_file_types_object->delete('3');
+         $colleges_departments_test->Save('5','sdfdf','151');
                   }
 
 

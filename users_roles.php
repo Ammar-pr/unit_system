@@ -19,48 +19,52 @@ class users_roles
 
     }
 
-    public  function Save($id, $name, $role_number)
+
+
+    public function Save($id, $name, $role_number)
     {
 
         R::ext('xdispense', function ($table_name) {
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec('UPDATE user_roles SET role_name="' . $name . '" , role_number="' . $role_number . '" WHERE id = "' . $id . '" ');
+            R::exec(" UPDATE `user_roles` SET `role_name` = '$name', `role_number` = '$role_number'  WHERE `user_roles`.`id` = '$id'");
         } else {
-            R::exec('INSERT INTO user_roles (role_name, role_number) VALUES ("' . $name . '", "' . $role_number . '")');
+            R::exec("INSERT INTO `user_roles` (`id`, `role_name`, `role_number`) VALUES (NULL, '$name', '$role_number')");
         }
 
     }
 
-    public  function fetchWithPK($id)
+    public function fetchWithPK($id)
     {
 
         if ($id > 0) {
-           return  R::exec('select * from  user_roles  WHERE id = "' . $id . '" ');
+            return R::exec("SELECT * FROM `user_roles` WHERE id='$id'");
         }
 
     }
 
-    public  function fetchAll()
-{
+    public function fetchAll()
+    {
 
 
-      R::exec('select * from  user_roles  ');
+        R::exec("SELECT * FROM `user_roles`");
 
-
-}
-
-public  function delete($id){
-     if($id>0) {
-         return R::exec('delete  from  user_roles  WHERE id = "' . $id . '" ');
-     }
-}
-    public  function deleteAll(){
-
-            return R::exec('delete  from  user_roles   ');
 
     }
 
+    public function delete($id)
+    {
+        if ($id > 0) {
+            return R::exec("DELETE FROM `user_roles` WHERE id ='$id' ");
+        }
+    }
+
+    public function deleteAll()
+    {
+
+        return R::exec("DELETE FROM `user_roles` ");
+
+    }
 
 }

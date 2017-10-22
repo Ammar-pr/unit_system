@@ -23,48 +23,52 @@ public function __construct()
 
     }
 
-    public  function Save($id, $status_name, $status_code,$description)
+
+
+    public function Save($id, $status_name, $status_code,$description)
     {
 
         R::ext('xdispense', function ($table_name) {
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec('UPDATE unit_status SET status_name="'.$status_name.'" ,  status_code="' . $status_code . '" ,  description="' . $description . '" WHERE id = "' . $id . '" ');
+            R::exec(" UPDATE `unit_status` SET `status_name` = '$status_name', `status_code` = '$status_code' , `description` = '$description' WHERE `unit_status`.`id` = '$id'");
         } else {
-            R::exec('INSERT INTO unit_status (status_name, status_code,description) VALUES ("' . $status_name . '", "' . $status_code . '", "' . $description . '")');
+            R::exec("INSERT INTO `unit_status` (`id`, `status_name`, `status_code`, `description`) VALUES (NULL, '$status_name', '$status_code','$description')");
         }
 
     }
 
-    public  function fetchWithPK($id)
+    public function fetchWithPK($id)
     {
 
         if ($id > 0) {
-            return  R::exec('select * from  unit_status  WHERE id = "' . $id . '" ');
+            return R::exec("SELECT * FROM `unit_status` WHERE id='$id'");
         }
 
     }
 
-    public  function fetchAll()
+    public function fetchAll()
     {
 
 
-          R::exec('select * from  unit_status  ');
+        R::exec("SELECT * FROM `unit_status`");
 
 
     }
 
-    public  function delete($id){
-        if($id>0) {
-            return R::exec('delete  from  unit_status  WHERE id = "' . $id . '" ');
+    public function delete($id)
+    {
+        if ($id > 0) {
+            return R::exec("DELETE FROM `unit_status` WHERE id ='$id' ");
         }
     }
-    public  function deleteAll(){
 
-        return R::exec('delete  from  unit_status   ');
+    public function deleteAll()
+    {
+
+        return R::exec("DELETE FROM `unit_status` ");
 
     }
-
 
 }
