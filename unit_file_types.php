@@ -8,7 +8,7 @@
 
 class unit_file_types
 {
-    function __construct()
+    public  function __construct()
     {
 
 

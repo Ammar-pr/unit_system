@@ -10,7 +10,7 @@ class unit_status
 {
 
 
-    function __construct()
+public function __construct()
     {
 
 

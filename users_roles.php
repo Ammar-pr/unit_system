@@ -6,7 +6,7 @@ class users_roles
 {
 
 
-    function __construct()
+    public function __construct()
     {
 
 
