@@ -129,6 +129,146 @@ protected  $description;
 
 
 
+    public function get_unit_status()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+
+        $unit_status=  R::findOne("unit_status",'id= ?',array($this->getId()));
+
+        if(count($unit_status)!=0) {
+            return $unit_status;
+        }else {
+
+            return null;
+        }
+    }
+
+
+    public function get_unit_status_list()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $unit_status_list = R::findAll('unit_status', ' ORDER BY id    ');
+        if(count($unit_status_list)>0){
+
+            return   $unit_status_list;
+        }else {
+            return null;
+
+        }
+
+    }
+
+
+
+    public function delete_unit_list()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $unit_status=  R::findOne("unit_status",'id= ?',array($this->getId()));
+
+        if(count($unit_status)!=0) {
+            R::trash($unit_status);
+            echo "delete is done ";
+        }else {
+            echo "cannot delete becase the record is not exist ";
+        }
+
+    }
+
+    public function delete_unit_status_list()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $unit_status_list = R::findAll('unit_status', ' ORDER BY id    ');
+
+        if (count($unit_status_list) > 0) {
+            R::trashAll($unit_status_list);
+            echo "data table unit_status deleted";
+        }else {
+            echo "the table is empty , empty table  ";
+        }
+    }
+
+
+
+
+
+
+
+
+    function update_unit_status ()
+
+    {
+
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+
+
+        R::ext('xdispense', function ($table_name){
+            return R::getRedBean()->dispense($table_name)  ;
+        });
+
+        $unit_status= R::xdispense('unit_status');
+
+        $unit_status_ob=  R::load('unit_status',$this->getId());
+        try {
+            if($unit_status_ob->getId()!=0){
+                // will never come to this code unless the id is exist -
+
+                $unit_status->status_name=$this->getStatusName();
+                $unit_status->description=$this->getDescription();
+                $unit_status->description=$this->getDescription();
+
+                $unit_status->id=$this->getId();
+
+                R::store($users_roles); //
+
+            }else {
+                echo "cannot update becuase the user id not exist";
+            }
+
+        }catch (Exception $ex){
+            echo "Duplicate entry";
+        }finally {
+            R::close();
+
+        }
+    }
+    function create_user_role() {
+
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+
+        R::ext('xdispense', function ($table_name){
+            return R::getRedBean()->dispense($table_name)  ;
+        });
+
+        $users_roles= R::xdispense('user_roles');
+
+
+
+        $users_roles->role_number=$this->getRoleNumber();
+        $users_roles->role_name=$this->getRoleName();
+        //  R::findOne("user_roles","name='' , role_number=''")
+        try {
+            R::store($users_roles); // store is done
+
+        }catch (Exception $r){
+
+            echo "Duplicate entry [Exception ] ";
+
+        }finally {
+            R::close();
+
+        }  }
 
 
 

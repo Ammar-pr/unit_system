@@ -158,18 +158,26 @@ function update_user_role ()
     $users_roles= R::xdispense('user_roles');
 
 $role_ob=  R::load('user_roles',$this->getId());
- if($role_ob->getId()!=0){
+try {
+if($role_ob->getId()!=0){
      // will never come to this code unless the id is exist -
-    echo "just true ";
+
      $users_roles->role_number=$this->getRoleNumber();
      $users_roles->role_name=$this->getRoleName();
      $users_roles->id=$this->getId();
+
       R::store($users_roles); //
 
  }else {
      echo "cannot update becuase the user id not exist";
  }
 
+}catch (Exception $ex){
+ echo "Duplicate entry";
+}finally {
+    R::close();
+
+}
 }
     function create_user_role() {
 
@@ -189,14 +197,16 @@ $role_ob=  R::load('user_roles',$this->getId());
         $users_roles->role_name=$this->getRoleName();
       //  R::findOne("user_roles","name='' , role_number=''")
  try {
-    // throw new Exception('Division by zero.');
     R::store($users_roles); // store is done
 
  }catch (Exception $r){
 
      echo "Duplicate entry [Exception ] ";
 
-        }  }
+        }finally {
+     R::close();
+
+ }  }
 
 
 

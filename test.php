@@ -20,12 +20,12 @@ class test
      public function test_update_colleges_department(){
          error_reporting(E_ALL);
          ini_set('display_errors', 1);
-     $te_object= new  users_roles('22','ee','1');
-         $te_object->setId('8');
+     $te_object= new  users_roles('222','e2e','1');
+         $te_object->setId('28');
         // $te_object->setCollegeId('1');
 
 
-         $te_object->create_user_role();
+         $te_object->delete_user_role();
 
                   }
 
