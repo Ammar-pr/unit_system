@@ -18,9 +18,9 @@ class test
 
 
      public function test_update_colleges_department(){
-            $status= new unit_status ();
+            $unit_file_types_object= new unit_file_types ();
 
-      
+         $unit_file_types_object->delete('3');
                   }
 
 
