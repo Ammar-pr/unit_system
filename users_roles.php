@@ -14,7 +14,7 @@ class users_roles
 
     }
 
-    public static function Save($id, $name, $role_number)
+    public  function Save($id, $name, $role_number)
     {
 
         R::ext('xdispense', function ($table_name) {
@@ -28,7 +28,7 @@ class users_roles
 
     }
 
-    public static function fetchWithPK($id)
+    public  function fetchWithPK($id)
     {
 
         if ($id > 0) {
@@ -37,7 +37,7 @@ class users_roles
 
     }
 
-    public static function fetchAll()
+    public  function fetchAll()
 {
 
 
@@ -46,12 +46,16 @@ class users_roles
 
 }
 
-public static function delete($id){
+public  function delete($id){
      if($id>0) {
          return R::exec('delete  from  user_roles  WHERE id = "' . $id . '" ');
      }
 }
+    public  function deleteAll(){
 
+            return R::exec('delete  from  user_roles   ');
+        
+    }
 
 
 }

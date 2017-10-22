@@ -5,6 +5,8 @@
  * Date: 15/10/17
  * Time: 09:50 م
  */
+
+require_once 'uqu/db/DatabaseManager.php';
 require_once 'scripts/RedBeanPHP/rb.php';
 
 
