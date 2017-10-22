@@ -46,7 +46,7 @@ class users_roles
 {
 
 
-    echo  R::exec('select * from  user_roles  ');
+      R::exec('select * from  user_roles  ');
 
 
 }

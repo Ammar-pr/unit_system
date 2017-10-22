@@ -18,9 +18,9 @@ class test
 
 
      public function test_update_colleges_department(){
-            $users_roles= new users_roles ();
+            $status= new unit_status ();
 
-         users_roles::delete('47');
+      
                   }
 
 

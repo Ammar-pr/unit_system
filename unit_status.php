@@ -50,7 +50,7 @@ class unit_status
     {
 
 
-        echo  R::exec('select * from  unit_status  ');
+          R::exec('select * from  unit_status  ');
 
 
     }
