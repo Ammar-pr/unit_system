@@ -18,9 +18,9 @@ class test
 
 
      public function test_update_colleges_department(){
-            $colleges_departments_test =new unit_service_type ();
+            $colleges_departments_test =new colleges ();
 
-         $colleges_departments_test->Save('9','dfgfdg','sfdsfsdfsd');
+         $colleges_departments_test->Save('9','sdfgvsdfgbsd');
                   }
 
 
