@@ -10,301 +10,61 @@ class unit_status
 {
 
 
-    //status_id	status_name	status_code	desc
-
-
-protected $id;// autoincreament
-protected $status_name;
-protected  $status_code;
-protected  $description;
-    function __construct($status_name,$status_code,$desc) {
-        $this->status_name = $status_name;
-        $this->status_code=$status_code;
-        $this->description=$desc;
-
-    }
-
-    /**
-     * @param mixed $desc
-     */
-
-
-
-
-    /**
-     * @param mixed $status_id
-     */
-
-
-    /**
-     * @param mixed $status_name
-     */
-    public function setStatusName($status_name)
+    function __construct()
     {
-        $this->status_name = $status_name;
-    }
-
-    /**
-     * @return mixed
-     */
 
 
+        if( !R::testConnection()) {
+            R::setup('mysql:host=localhost;dbname=unit',
+                'root', 'dwddwddwd');
 
-
-    /**
-     * @return mixed
-     */
-    public function getStatusName()
-    {
-        return $this->status_name;
-    }
-
-    /**
-     * @param mixed $id
-     */
-    public function setId($id)
-    {
-        $this->id = $id;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getId()
-    {
-        return $this->id;
-    }
-
-    /**
-     * @param mixed $description
-     */
-    public function setDescription($description)
-    {
-        $this->description = $description;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getDescription()
-    {
-        return $this->description;
-    }
-
-    /**
-     * @param mixed $status_code
-     */
-    public function setStatusCode($status_code)
-    {
-        $this->status_code = $status_code;
-    }
-
-    /**
-     * @return mixed
-     */
-    public function getStatusCode()
-    {
-        return $this->status_code;
-    }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    public function get_unit_status()
-    {
-        if(!R::testConnection()){
-            exit("data base not connect please check ...");
-        }
-
-        $unit_status=  R::findOne("unit_status",'id= ?',array($this->getId()));
-
-        if(count($unit_status)!=0) {
-            return $unit_status;
-        }else {
-
-            return null;
-        }
-    }
-
-
-    public function get_unit_status_list()
-    {
-        if(!R::testConnection()){
-            exit("data base not connect please check ...");
-        }
-        $unit_status_list = R::findAll('unit_status', ' ORDER BY id    ');
-        if(count($unit_status_list)>0){
-
-            return   $unit_status_list;
-        }else {
-            return null;
 
         }
 
     }
 
-
-
-    public function delete_unit_list()
-    {
-        if(!R::testConnection()){
-            exit("data base not connect please check ...");
-        }
-        $unit_status=  R::findOne("unit_status",'id= ?',array($this->getId()));
-
-        if(count($unit_status)!=0) {
-            R::trash($unit_status);
-            echo "delete is done ";
-        }else {
-            echo "cannot delete becase the record is not exist ";
-        }
-
-    }
-
-    public function delete_unit_status_list()
-    {
-        if(!R::testConnection()){
-            exit("data base not connect please check ...");
-        }
-        $unit_status_list = R::findAll('unit_status', ' ORDER BY id    ');
-
-        if (count($unit_status_list) > 0) {
-            R::trashAll($unit_status_list);
-            echo "data table unit_status deleted";
-        }else {
-            echo "the table is empty , empty table  ";
-        }
-    }
-
-
-
-
-
-
-
-
-    function update_unit_status ()
-
+    public  function Save($id, $status_name, $status_code,$description)
     {
 
-        if(!R::testConnection()){
-            exit("data base not connect please check ...");
-        }
-
-
-        R::ext('xdispense', function ($table_name){
-            return R::getRedBean()->dispense($table_name)  ;
+        R::ext('xdispense', function ($table_name) {
+            return R::getRedBean()->dispense($table_name);
         });
+        if ($id > 0) {
+            R::exec('UPDATE unit_status SET status_name="'.$status_name.'" ,  status_code="' . $status_code . '" ,  description="' . $description . '" WHERE id = "' . $id . '" ');
+        } else {
+            R::exec('INSERT INTO unit_status (status_name, status_code,description) VALUES ("' . $status_name . '", "' . $status_code . '", "' . $description . '")');
+        }
 
-        $unit_status= R::xdispense('unit_status');
+    }
 
-        $unit_status_ob=  R::load('unit_status',$this->getId());
-        try {
-            if($unit_status_ob->getId()!=0){
-                // will never come to this code unless the id is exist -
+    public  function fetchWithPK($id)
+    {
 
-                $unit_status->status_name=$this->getStatusName();
-                $unit_status->status_code=$this->getStatusCode();
-                $unit_status->description=$this->getDescription();
+        if ($id > 0) {
+            return  R::exec('select * from  unit_status  WHERE id = "' . $id . '" ');
+        }
 
-                $unit_status->id=$this->getId();
+    }
 
-                R::store($unit_status); //
+    public  function fetchAll()
+    {
 
-            }else {
-                echo "cannot update becuase the  id not exist";
-            }
 
-        }catch (Exception $ex){
-            echo "Duplicate entry";
-        }finally {
-            R::close();
+        echo  R::exec('select * from  unit_status  ');
 
+
+    }
+
+    public  function delete($id){
+        if($id>0) {
+            return R::exec('delete  from  unit_status  WHERE id = "' . $id . '" ');
         }
     }
-    function create_unit_status() {
+    public  function deleteAll(){
 
-        if(!R::testConnection()){
-            exit("data base not connect please check ...");
-        }
+        return R::exec('delete  from  unit_status   ');
 
-        R::ext('xdispense', function ($table_name){
-            return R::getRedBean()->dispense($table_name)  ;
-        });
-
-        $unit_status= R::xdispense('unit_status');
-
-
-
-        $unit_status->status_name=$this->getStatusName();
-        $unit_status->status_code=$this->getStatusCode();
-        $unit_status->description=$this->getDescription();
-
-        //  R::findOne("user_roles","name='' , role_number=''")
-        try {
-            R::store($unit_status); // store is done
-
-        }catch (Exception $r){
-
-            echo "Duplicate entry [Exception ] ";
-
-        }finally {
-            R::close();
-
-        }  }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    }
 
 
 }
-
-?>

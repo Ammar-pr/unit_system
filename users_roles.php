@@ -9,8 +9,13 @@ class users_roles
     function __construct()
     {
 
-        $db = new DatabaseManager;
-        $db->getConnection();
+
+            if( !R::testConnection()) {
+                R::setup('mysql:host=localhost;dbname=unit',
+                    'root', 'dwddwddwd');
+
+
+            }
 
     }
 
@@ -54,7 +59,7 @@ public  function delete($id){
     public  function deleteAll(){
 
             return R::exec('delete  from  user_roles   ');
-        
+
     }
 
 
