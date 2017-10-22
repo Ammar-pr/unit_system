@@ -171,7 +171,7 @@ $role_ob=  R::load('user_roles',$this->getId());
  }
 
 }
-    function create() {
+    function create_user_role() {
 
     if(!R::testConnection()){
         exit("data base not connect please check ...");
@@ -187,14 +187,16 @@ $role_ob=  R::load('user_roles',$this->getId());
 
         $users_roles->role_number=$this->getRoleNumber();
         $users_roles->role_name=$this->getRoleName();
+      //  R::findOne("user_roles","name='' , role_number=''")
+ try {
+    // throw new Exception('Division by zero.');
+    R::store($users_roles); // store is done
 
-        $id_redbean_user_role_id=  R::store($users_roles); // store is done
-        if($id_redbean_user_role_id>0){
+ }catch (Exception $r){
 
-        }else {
-            echo "the data cannot be inserted in the table user_role  table ...";
-        }
-    }
+     echo "Duplicate entry [Exception ] ";
+
+        }  }
 
 
 

@@ -112,46 +112,6 @@ protected  $description;
 
 
 
-    public  function get_unit_status_object()
-    {
-
-        // to check specfic depratment for any clolleges
-        try {
-            $row = R::getAll("SELECT * FROM unitstatus where id='".$this->getId()."'");
-            R::convertToBeans( 'user', $row );
-            if(count($row)>0){
-
-                return $row;
-            }else {
-
-                return null;
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
-
-
-
-
-    public  function get_unit_status_object_list()
-    {
-
-        // to check specfic depratment for any clolleges
-        try {
-            $row = R::getAll("SELECT * FROM unitstatus ");
-            R::convertToBeans( 'unitstatus', $row );
-            if(count($row)>0){
-
-                return $row;
-            }else {
-
-                return null;
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
 
 
 
@@ -167,67 +127,20 @@ protected  $description;
 
 
 
-    public function delete_unit_status_object() {
-
-        try {
-            if(  R::exec( 'delete from  unitstatus    WHERE id ="'.$this->getId().'" ')==1){
-
-            }else{
-                echo"there is issue with delete";
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
 
 
 
-    public function delete_unit_status_All_records() {
-
-        try {
-            if(  R::exec( 'delete from  unitstatus  ')==1){
-
-            }else{
-                echo"there is issue with delete";
-            }
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-    }
-
-
-    function update(){
-
-        try {
-            $status= R::exec( 'update unitstatus set status_name="'.$this->getStatusName().'" ,description= "'.$this->getDescription().'"  , status_code="'.$this->getStatusCode().'"   where id="'.$this->getId().'" ' );
-            if($status==0){
-                echo "can't update the record ";
-            }
-            R::close();
-        }catch (SQLiteException $sq){
-            $sq->getMessage();
-        }
-
-
-    }
-
-
-    function insert() {
-        $unitstatus= R::dispense('unitstatus');
 
 
 
-        $unitstatus->status_name=$this->getStatusName();
-        $unitstatus->status_code=$this->getStatusCode();
-        $unitstatus->description=$this->getDescription();
 
-        $id_redbean_unit_status_id=  R::store($unitstatus); // store is done
-        if($id_redbean_unit_status_id>0){
 
-        }else {
-            echo "the data cannot be inserted in the table unit status table ...";
-        }
-    }
+
+
+
+
+
+
 
 
 
