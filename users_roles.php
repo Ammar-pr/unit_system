@@ -73,44 +73,50 @@ class users_roles
     }
 
 
-    public function get_user_role_object()
-    {
-
-        // to check specfic depratment for any clolleges
-        try {
-            $row = R::getAll("SELECT * FROM usersroles where id='" . $this->getId() . "'");
-            R::convertToBeans('user', $row);
-            if (count($row) > 0) {
-
-                return $row;
-            } else {
-
-                return null;
-            }
-        } catch (SQLiteException $sq) {
-            $sq->getMessage();
-        }
-    }
-
-
-    public function get_user_role_object_list()
-    {
-        $roles_list = R::findAll('user_roles', ' ORDER BY id    ');
-        if()
-
-    }
-
-
-
-    public function delete_user_role_object()
+    public function get_user_role()
     {
         if(!R::testConnection()){
             exit("data base not connect please check ...");
         }
-      $user=  R::findOne("user_roles",'id= ?',array($this->getId()));
 
-      if(count($user)!=0) {
-          R::trash($user);
+        $use_r=  R::findOne("user_roles",'id= ?',array($this->getId()));
+
+        if(count($use_r)!=0) {
+        return $use_r;
+        }else {
+
+        return null;
+        }
+    }
+
+
+    public function get_user_role_list()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+        $roles_list = R::findAll('user_roles', ' ORDER BY id    ');
+        if(count($roles_list)>0){
+
+            return   $roles_list;
+        }else {
+            return null;
+
+        }
+
+    }
+
+
+
+    public function delete_user_role()
+    {
+        if(!R::testConnection()){
+            exit("data base not connect please check ...");
+        }
+      $use_r=  R::findOne("user_roles",'id= ?',array($this->getId()));
+
+      if(count($use_r)!=0) {
+          R::trash($use_r);
           echo "delete is done ";
       }else {
           echo "cannot delete becase the record is not exist ";
@@ -118,7 +124,7 @@ class users_roles
 
     }
 
-    public function delete_user_role_All_records()
+    public function delete_user_roles_list()
     {
         if(!R::testConnection()){
             exit("data base not connect please check ...");
@@ -136,7 +142,7 @@ class users_roles
 
 
 
-function update ()
+function update_user_role ()
 
 {
 
@@ -193,31 +199,6 @@ $role_ob=  R::load('user_roles',$this->getId());
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-   function load ($id,$table) {
-       $user_role_object = R::load( $table, $id );
-        if(count($user_role_object)==1){
-
-            return null;
-       }else if(count($user_role_object)>1){
-
-            return $user_role_object;
-        }
-
-
-
-
-   }
 
 
 
