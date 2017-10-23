@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 23, 2017 at 10:59 AM
+-- Generation Time: Oct 24, 2017 at 01:42 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -54,6 +54,13 @@ CREATE TABLE `colleges_departments` (
   `department_name` varchar(60) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
+--
+-- Dumping data for table `colleges_departments`
+--
+
+INSERT INTO `colleges_departments` (`id`, `college_id`, `department_name`) VALUES
+(26, 5, 'computer');
+
 -- --------------------------------------------------------
 
 --
@@ -65,6 +72,13 @@ CREATE TABLE `unitfiletype` (
   `unit_id` int(11) DEFAULT NULL,
   `extension` varchar(10) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+
+--
+-- Dumping data for table `unitfiletype`
+--
+
+INSERT INTO `unitfiletype` (`id`, `unit_id`, `extension`) VALUES
+(21, 13, 'xls');
 
 -- --------------------------------------------------------
 
@@ -92,8 +106,8 @@ CREATE TABLE `units_requests` (
 --
 
 INSERT INTO `units_requests` (`id`, `id_requester`, `id_responder`, `request_date`, `response_date`, `status_id`, `unit_id`, `attachment_request_link`, `attachment_response_link`, `file_hash_response`, `file_hash_request`, `title`) VALUES
-(1, 11, 232, '2017-10-25 04:12:15', '2017-10-25 04:12:15', 11, 13, 'sdfsdfsdfdsfsd', 'sdfdsfsdfsdfd', 'sdfsdfsdfsdfd', 'sdfdsfsdfsdfsdfsdfsd', 'sdfdsfsdf'),
-(2, 1, 2, '2017-10-24 00:06:16', '2017-10-02 00:23:21', 1, 22, 'asd', 'asd', 'asdasd', 'asdasdsa', 'asdsads');
+(1, 1, 2, '2017-10-25 04:12:15', '2017-10-25 04:12:15', 31, 13, 'sdfsdfsdfdsfsd', 'sdfdsfsdfsdfd', 'sdfsdfsdfsdfd', 'sdfdsfsdfsdfsdfsdfsd', 'sdfdsfsdf'),
+(2, 1, 2, '2017-10-24 00:06:16', '2017-10-02 00:23:21', 31, 22, 'asd', 'asd', 'asdasd', 'asdasdsa', 'asdsads');
 
 -- --------------------------------------------------------
 
@@ -112,13 +126,8 @@ CREATE TABLE `unit_service_type` (
 --
 
 INSERT INTO `unit_service_type` (`id`, `name`, `description`) VALUES
-(1, 'وحدة التحليل الاحصائي ', 'الاستشارة في أنواع البحث الكمي المختلفة والتحليل الاحصائي والمعالجة في الاوراق العلمية المقدمة للنشر، والإرشاد لاختيار الطرق المناسبة.'),
-(2, 'وحدة التدقيق اللغوي العربي', 'توفير خدمة التدقيق اللغوي لملخصات الأوراق العلمية الأكاديمية باللغة العربية (لا تزيد عن ٥٠٠ كلمة)'),
-(3, 'وحدة التدقيق اللغوي الانجليزي', 'توفير خدمة التدقيق اللغوي لملخصات الاوراق العلميه الاكاديميه باللغه الانجليزيه (لا تزيد عن ٥٠٠ كلمه)'),
-(6, 'test', 'test'),
-(7, 'ccc', '2344354'),
-(9, 'dfgfdg', 'sfdsfsdfsd'),
-(10, 'sdf', 'sdfds');
+(13, 'وحدة التحيل الاحصائي', 'وصفها هي كذا كذا كذا'),
+(22, 'وحدة التدقيق العربي', 'وصفها هي كذا كذا كذا');
 
 -- --------------------------------------------------------
 
@@ -129,7 +138,6 @@ INSERT INTO `unit_service_type` (`id`, `name`, `description`) VALUES
 CREATE TABLE `unit_status` (
   `id` int(11) NOT NULL,
   `status_name` varchar(128) NOT NULL,
-  `status_code` varchar(6) NOT NULL,
   `description` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
@@ -137,9 +145,8 @@ CREATE TABLE `unit_status` (
 -- Dumping data for table `unit_status`
 --
 
-INSERT INTO `unit_status` (`id`, `status_name`, `status_code`, `description`) VALUES
-(7, 'ff', '55', 'sfdsfd'),
-(8, 'ffss', '5s5', 'sfssdsfd');
+INSERT INTO `unit_status` (`id`, `status_name`, `description`) VALUES
+(31, 'fghfg', 'fghfg');
 
 -- --------------------------------------------------------
 
@@ -163,7 +170,8 @@ CREATE TABLE `users` (
 --
 
 INSERT INTO `users` (`id`, `user_job_number`, `role_id`, `department_id`, `name`, `password`, `phonenumber_number`, `user_name`) VALUES
-(1, 232, 22, 224, 'sdfsdf', 'sdfsdfesrg', '0503448951', 'qhc@hotmail.com');
+(1, 232, 22, 26, 'sdfsdf', 'sdfsdfesrg', '0503448951', 'qhc@hotmail.com'),
+(2, 11, 1, 26, 'asdsad', 'a@345354', '5034489532', 'qq@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -173,7 +181,6 @@ INSERT INTO `users` (`id`, `user_job_number`, `role_id`, `department_id`, `name`
 
 CREATE TABLE `user_roles` (
   `id` int(11) UNSIGNED NOT NULL,
-  `role_number` int(11) UNSIGNED DEFAULT NULL,
   `role_name` varchar(191) COLLATE utf8mb4_unicode_ci DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
@@ -181,10 +188,9 @@ CREATE TABLE `user_roles` (
 -- Dumping data for table `user_roles`
 --
 
-INSERT INTO `user_roles` (`id`, `role_number`, `role_name`) VALUES
-(2, NULL, 'asdfsdf'),
-(80, 23, 'asdsa'),
-(93, 12, 'asdsad');
+INSERT INTO `user_roles` (`id`, `role_name`) VALUES
+(1, 'customer'),
+(22, 'admin');
 
 --
 -- Indexes for dumped tables
@@ -220,8 +226,7 @@ ALTER TABLE `units_requests`
   ADD UNIQUE KEY `title` (`title`),
   ADD KEY `id_requester` (`id_requester`),
   ADD KEY `id_responder` (`id_responder`),
-  ADD KEY `status_id` (`status_id`),
-  ADD KEY `id_requester_2` (`id_requester`);
+  ADD KEY `status_id` (`status_id`);
 
 --
 -- Indexes for table `unit_service_type`
@@ -243,7 +248,10 @@ ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_job_number` (`user_job_number`),
   ADD UNIQUE KEY `user_name` (`user_name`),
-  ADD UNIQUE KEY `phonenumber_number` (`phonenumber_number`);
+  ADD UNIQUE KEY `phonenumber_number` (`phonenumber_number`),
+  ADD KEY `user_job_number_2` (`user_job_number`),
+  ADD KEY `role_id` (`role_id`),
+  ADD KEY `department_id` (`department_id`);
 
 --
 -- Indexes for table `user_roles`
@@ -259,12 +267,12 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT for table `colleges_departments`
 --
 ALTER TABLE `colleges_departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
 --
 -- AUTO_INCREMENT for table `unitfiletype`
 --
 ALTER TABLE `unitfiletype`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 --
 -- AUTO_INCREMENT for table `units_requests`
 --
@@ -274,22 +282,22 @@ ALTER TABLE `units_requests`
 -- AUTO_INCREMENT for table `unit_service_type`
 --
 ALTER TABLE `unit_service_type`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=20;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- AUTO_INCREMENT for table `unit_status`
 --
 ALTER TABLE `unit_status`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=32;
 --
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `user_roles`
 --
 ALTER TABLE `user_roles`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=106;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
 --
 -- Constraints for dumped tables
 --
@@ -305,6 +313,21 @@ ALTER TABLE `colleges_departments`
 --
 ALTER TABLE `unitfiletype`
   ADD CONSTRAINT `unitfiletype_ibfk_1` FOREIGN KEY (`unit_id`) REFERENCES `unit_service_type` (`id`);
+
+--
+-- Constraints for table `units_requests`
+--
+ALTER TABLE `units_requests`
+  ADD CONSTRAINT `units_requests_ibfk_1` FOREIGN KEY (`id_requester`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `units_requests_ibfk_2` FOREIGN KEY (`id_responder`) REFERENCES `users` (`id`),
+  ADD CONSTRAINT `units_requests_ibfk_3` FOREIGN KEY (`status_id`) REFERENCES `unit_status` (`id`),
+  ADD CONSTRAINT `units_requests_ibfk_4` FOREIGN KEY (`unit_id`) REFERENCES `unit_service_type` (`id`);
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `colleges_departments` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
