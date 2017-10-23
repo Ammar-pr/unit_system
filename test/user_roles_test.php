@@ -118,6 +118,3 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
 
 
 }
-
-//$t =new user_roles_test();
-//$t->test_delete_all();
