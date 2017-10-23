@@ -44,7 +44,7 @@ class unit_service_type
     {
 
         if ($id > 0) {
-            return R::exec("SELECT * FROM `unit_service_type` WHERE id='$id'");
+            return R::load('unit_service_type',$id);
         }
 
     }
@@ -53,11 +53,11 @@ class unit_service_type
     {
 
 
-        R::exec("SELECT * FROM `unit_service_type`");
+        return R::getAll( 'SELECT * FROM unit_service_type' );
+
 
 
     }
-
     public function delete($id)
     {
         if ($id > 0) {

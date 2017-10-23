@@ -39,7 +39,7 @@ class unit_file_types
     {
 
         if ($id > 0) {
-            return R::exec("SELECT * FROM `unit_file_type` WHERE id='$id'");
+            return R::load('unit_file_type',$id);
         }
 
     }
@@ -48,7 +48,8 @@ class unit_file_types
     {
 
 
-        R::exec("SELECT * FROM `unit_file_type`");
+        return R::getAll( 'SELECT * FROM unit_file_type' );
+
 
 
     }

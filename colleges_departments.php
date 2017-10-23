@@ -39,7 +39,7 @@ class colleges_departments
     {
 
         if ($id > 0) {
-            return R::exec("SELECT * FROM `colleges_departments` WHERE id='$id'");
+            return R::load('colleges_departments',$id);
         }
 
     }
@@ -48,10 +48,12 @@ class colleges_departments
     {
 
 
-        R::exec("SELECT * FROM `colleges_departments`");
+        return R::getAll( 'SELECT * FROM `colleges_departments` ' );
+
 
 
     }
+
 
     public function delete($id)
     {

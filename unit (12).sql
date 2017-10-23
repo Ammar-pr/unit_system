@@ -304,7 +304,7 @@ ALTER TABLE `unitfiletype`
 ALTER TABLE `units_requests`
   ADD CONSTRAINT `id_requester_linked_users` FOREIGN KEY (`id_requester`) REFERENCES `users` (`id_user`),
   ADD CONSTRAINT `id_responder_linked_usres` FOREIGN KEY (`id_responder`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `statis_id_linked_unit_status` FOREIGN KEY (`status_id`) REFERENCES `unitstatus` (`id`),
+  ADD CONSTRAINT `statis_id_linked_` FOREIGN KEY (`status_id`) REFERENCES `unitstatus` (`id`),
   ADD CONSTRAINT `unit_id_linked_unit_service_type` FOREIGN KEY (`unit_id`) REFERENCES `unitservicetype` (`id`);
 
 --

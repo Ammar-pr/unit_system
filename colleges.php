@@ -35,7 +35,7 @@ class colleges
     {
 
         if ($id > 0) {
-            return R::exec("SELECT * FROM `colleges` WHERE id='$id'");
+            return R::load('colleges',$id);
         }
 
     }
@@ -44,7 +44,8 @@ class colleges
     {
 
 
-        R::exec("SELECT * FROM `colleges`");
+        return R::getAll( 'SELECT * FROM colleges' );
+
 
 
     }

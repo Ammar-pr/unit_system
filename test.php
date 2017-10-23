@@ -10,7 +10,7 @@ require_once 'colleges_departments.php';
 require_once 'colleges.php';
 require_once 'unit_file_types.php';
 require_once 'unit_service_type.php';
-require_once 'unit_status.php';
+
 require_once 'users_roles.php';
 
 class test
@@ -18,9 +18,10 @@ class test
 
 
      public function test_update_colleges_department(){
-            $colleges_departments_test =new colleges ();
+            $colleges_departments_test =new users_roles ();
 
-         $colleges_departments_test->Save('9','sdfgvsdfgbsd');
+       $var = $colleges_departments_test->fetchWithPK('43');
+
                   }
 
 

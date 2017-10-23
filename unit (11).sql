@@ -100,10 +100,10 @@ INSERT INTO `unit_service_type` (`unit_id`, `name`, `description`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `unit_status`
+-- Table structure for table ``
 --
 
-CREATE TABLE `unit_status` (
+CREATE TABLE `` (
   `status_id` int(11) NOT NULL,
   `status_name` varchar(128) NOT NULL,
   `status_code` varchar(6) NOT NULL,
@@ -180,9 +180,9 @@ ALTER TABLE `unit_service_type`
   ADD PRIMARY KEY (`unit_id`);
 
 --
--- Indexes for table `unit_status`
+-- Indexes for table ``
 --
-ALTER TABLE `unit_status`
+ALTER TABLE ``
   ADD PRIMARY KEY (`status_id`),
   ADD UNIQUE KEY `status_index` (`status_code`);
 
@@ -232,9 +232,9 @@ ALTER TABLE `unit_file_types`
 ALTER TABLE `unit_service_type`
   MODIFY `unit_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 --
--- AUTO_INCREMENT for table `unit_status`
+-- AUTO_INCREMENT for table ``
 --
-ALTER TABLE `unit_status`
+ALTER TABLE ``
   MODIFY `status_id` int(11) NOT NULL AUTO_INCREMENT;
 --
 -- AUTO_INCREMENT for table `users`
@@ -262,7 +262,7 @@ ALTER TABLE `colleges_departments`
 ALTER TABLE `units_requests`
   ADD CONSTRAINT `id_requester_linked_users` FOREIGN KEY (`id_requester`) REFERENCES `users` (`id_user`),
   ADD CONSTRAINT `id_responder_linked_usres` FOREIGN KEY (`id_responder`) REFERENCES `users` (`id_user`),
-  ADD CONSTRAINT `statis_id_linked_unit_status` FOREIGN KEY (`status_id`) REFERENCES `unit_status` (`status_id`),
+  ADD CONSTRAINT `statis_id_linked_` FOREIGN KEY (`status_id`) REFERENCES `` (`status_id`),
   ADD CONSTRAINT `unit_id_linked_unit_service_type` FOREIGN KEY (`unit_id`) REFERENCES `unit_service_type` (`unit_id`);
 
 --

@@ -5,29 +5,17 @@
  * Date: 16/10/17
  * Time: 02:08 ص
  */
-
 class unit_status
 {
-
-
-public function __construct()
+    public function __construct()
     {
-
-
         if( !R::testConnection()) {
             R::setup('mysql:host=localhost;dbname=unit',
                 'root', 'dwddwddwd');
-
-
         }
-
     }
-
-
-
     public function Save($id, $status_name, $status_code,$description)
     {
-
         R::ext('xdispense', function ($table_name) {
             return R::getRedBean()->dispense($table_name);
         });
@@ -36,14 +24,13 @@ public function __construct()
         } else {
             R::exec("INSERT INTO `unit_status` (`id`, `status_name`, `status_code`, `description`) VALUES (NULL, '$status_name', '$status_code','$description')");
         }
-
     }
 
     public function fetchWithPK($id)
     {
 
         if ($id > 0) {
-            return R::exec("SELECT * FROM `unit_status` WHERE id='$id'");
+            return R::load('unit_status',$id);
         }
 
     }
@@ -52,23 +39,19 @@ public function __construct()
     {
 
 
-        R::exec("SELECT * FROM `unit_status`");
+        return R::getAll( 'SELECT * FROM `unit_status` ' );
+
 
 
     }
-
     public function delete($id)
     {
         if ($id > 0) {
             return R::exec("DELETE FROM `unit_status` WHERE id ='$id' ");
         }
     }
-
     public function deleteAll()
     {
-
         return R::exec("DELETE FROM `unit_status` ");
-
     }
-
 }

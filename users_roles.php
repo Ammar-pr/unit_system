@@ -1,7 +1,6 @@
 <?php
 
 
-require_once 'uqu/db/DatabaseManager.php';
 class users_roles
 {
 
@@ -29,8 +28,10 @@ class users_roles
         });
         if ($id > 0) {
             R::exec(" UPDATE `user_roles` SET `role_name` = '$name', `role_number` = '$role_number'  WHERE `user_roles`.`id` = '$id'");
+
         } else {
-            R::exec("INSERT INTO `user_roles` (`id`, `role_name`, `role_number`) VALUES (NULL, '$name', '$role_number')");
+              R::exec("INSERT INTO `user_roles` (`id`, `role_name`, `role_number`) VALUES (NULL, '$name', '$role_number')");
+
         }
 
     }
@@ -39,7 +40,7 @@ class users_roles
     {
 
         if ($id > 0) {
-            return R::exec("SELECT * FROM `user_roles` WHERE id='$id'");
+           return R::load('user_roles',$id);
         }
 
     }
@@ -48,7 +49,8 @@ class users_roles
     {
 
 
-        R::exec("SELECT * FROM `user_roles`");
+        return R::getAll( 'SELECT * FROM user_roles' );
+
 
 
     }
