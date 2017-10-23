@@ -15,15 +15,17 @@ class unit_status
                 'root', 'dwddwddwd');
         }
     }
-    public function Save($id, $status_name, $status_code,$description)
+    public function Save($id, $status_name,$description)
     {
         R::ext('xdispense', function ($table_name) {
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `unit_status` SET `status_name` = '$status_name', `status_code` = '$status_code' , `description` = '$description' WHERE `unit_status`.`id` = $id");
+            echo "sdf";
+          echo   R::exec(" UPDATE `unit_status` SET `status_name` = '$status_name'  , `description` = '$description'  WHERE `unit_status`.`id` =".$id);
+
         } else {
-            R::exec("INSERT INTO `unit_status` (`id`, `status_name`, `status_code`, `description`) VALUES (NULL, '$status_name', '$status_code','$description')");
+            R::exec("INSERT INTO `unit_status` (`status_name`, `description`) VALUES ('$status_name','$description')");
         }
     }
 
@@ -32,6 +34,8 @@ class unit_status
 
         if ($id > 0) {
             return R::load('unit_status',$id);
+        }else {
+            echo "the id is empty";
         }
 
     }
@@ -48,11 +52,26 @@ class unit_status
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `unit_status` WHERE id =$id ");
+            return R::exec("DELETE FROM `unit_status` WHERE id =".$id );
+        }else {
+            echo "cannot search , the id is empty";
         }
     }
     public function deleteAll()
     {
         return R::exec("DELETE FROM `unit_status` ");
     }
+
+
+
+
+
+
+
+
+
+
 }
+
+
+// test on updated  test on insert

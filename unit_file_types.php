@@ -28,10 +28,10 @@ class unit_file_types
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `unitfiletype` SET `unit_id` = '$unit_id', `extension` = '$extension' WHERE `unit_file_type`.`id` = $id");
-           return $id;
+           return R::exec(" UPDATE `unitfiletype` SET `unit_id` = $unit_id, `extension` = '$extension' WHERE `unit_file_type`.`id` =".$id);
+
         } else {
-            R::exec("INSERT INTO `unitfiletype` (`id`, `unit_id`, `extension`) VALUES (NULL, NULL, '$extension')");
+            return R::exec("INSERT INTO `unitfiletype` ( `unit_id`, `extension`) VALUES ($unit_id, '$extension')");
         }
 
     }
@@ -41,6 +41,8 @@ class unit_file_types
 
         if ($id > 0) {
             return R::load('unitfiletype',$id);
+        }else {
+            echo "cannot search , the id is empty";
         }
 
     }
@@ -58,7 +60,9 @@ class unit_file_types
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `unitfiletype` WHERE id =$id ");
+            return R::exec("DELETE FROM `unitfiletype` WHERE id =".$id );
+        }else {
+            echo "cannot search , the id is empty";
         }
     }
 

@@ -20,17 +20,17 @@ class users_roles
 
 
 
-    public function Save($id, $name, $role_number)
+    public function Save($id, $name)
     {
 
         R::ext('xdispense', function ($table_name) {
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `user_roles` SET `role_name` = '$name', `role_number` = '$role_number'  WHERE `user_roles`.`id` = $id");
-                return $id;
+         return   R::exec(" UPDATE `user_roles` SET `role_name` = '$name'  WHERE `user_roles`.`id` =".$id);
+
         } else {
-              R::exec("INSERT INTO `user_roles` (`id`, `role_name`, `role_number`) VALUES (NULL, '$name', '$role_number')");
+            return   R::exec("INSERT INTO `user_roles` ( `role_name`) VALUES ( '$name')");
 
         }
 
@@ -41,6 +41,8 @@ class users_roles
 
         if ($id > 0) {
            return R::load('user_roles',$id);
+        }else {
+            echo "the id is empty";
         }
 
     }
@@ -58,7 +60,7 @@ class users_roles
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `user_roles` WHERE id =$id ");
+            return R::exec("DELETE FROM `user_roles` WHERE id =".$id );
         }
     }
 
@@ -72,5 +74,3 @@ class users_roles
 }
 
 
-$user_role= new users_roles();
-$user_role->delete(104);

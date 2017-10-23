@@ -29,10 +29,10 @@ class colleges_departments
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `colleges_departments` SET `college_id` = '$college_id', `department_name` = '$department_name' WHERE `colleges_departments`.`id` = $id");
+            R::exec(" UPDATE `colleges_departments` SET `college_id` = $college_id, `department_name` = '$department_name' WHERE `colleges_departments`.`id` =".$id);
             return $id;
         } else {
-            R::exec("INSERT INTO `colleges_departments` (`id`, `college_id`, `department_name`) VALUES (NULL, NULL, '$department_name')");
+            R::exec("INSERT INTO `colleges_departments` ( `college_id`, `department_name`) VALUES ( $college_id, '$department_name')");
         }
 
     }
@@ -40,8 +40,11 @@ class colleges_departments
     public function fetchWithPK($id)
     {
 
+
         if ($id > 0) {
             return R::load('colleges_departments',$id);
+        }else {
+            echo "the id is empty";
         }
 
     }
@@ -60,7 +63,9 @@ class colleges_departments
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `colleges_departments` WHERE id =$id ");
+            return R::exec("DELETE FROM `colleges_departments` WHERE id =".$id );
+        }else {
+            echo "the id is empty";
         }
     }
 
