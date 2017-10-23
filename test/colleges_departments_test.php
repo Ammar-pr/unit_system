@@ -12,14 +12,16 @@ class colleges_departments_test extends \PHPUnit_Framework_TestCase
 
         $tested= new colleges_departments();
 
-        $tested->Save('','sdfdfs','5');
-        $id= R::getInsertID();
-        $var= R::load('colleges_departments',R::getInsertID());
-
-
-
-
-      $this->assertEquals($var->id,$id);
+        $id= $tested->Save('','sdfdfs','5');
+        if($id>0)
+        {
+            $var= R::load('colleges_departments',$id);
+            $this->assertEquals($var->id,$id);
+        }else {
+            $id= R::getInsertID();
+            $var= R::load('colleges_departments',R::getInsertID());
+            $this->assertEquals($var->id,$id);
+        }
     }
 
 
@@ -54,16 +56,16 @@ class colleges_departments_test extends \PHPUnit_Framework_TestCase
 
         $tested= new colleges_departments();
 
-        $roles_list=$tested->fetchAll();
+        $colleges_list=$tested->fetchAll();
 
 
-        echo count($roles_list);
+        echo count($colleges_list);
 
         // if $roles.lenght >0 ?
-        foreach ($roles_list as $role_ob){
+        foreach ($colleges_list as $colleges_ob){
 
 
-            $var_r= R::load('colleges_departments',$role_ob['id']);
+            $var_r= R::load('colleges_departments',$colleges_ob['id']);
              $this->assertEquals($var_r->id,$role_ob['id']);
         }
 
@@ -74,14 +76,14 @@ class colleges_departments_test extends \PHPUnit_Framework_TestCase
 
         $tested= new colleges_departments();
 
-        $roles_list=$tested->fetchAll();
+        $colleges_list=$tested->fetchAll();
 
 
 
 
-        $list_roles_number = R::count( 'colleges_departments' );
+        $colleges_list_number = R::count( 'colleges_departments' );
 
-         $this->assertEquals($list_roles_number,count($roles_list));
+         $this->assertEquals($colleges_list_number,count($colleges_list));
 
 
     }
