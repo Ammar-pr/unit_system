@@ -18,8 +18,7 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
     //echo R::getInsertID();
 
 
-
-  // $this->assertEquals($var->id,$id);
+$this->assertEquals($var->id,$id);
 }
 
 
@@ -37,7 +36,7 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
 
     //  echo  $var->id;
 
-        //  $this->assertEquals($var_r->id,$var_test->id);
+         $this->assertEquals($var_r->id,$var_test->id);
     }
 
     public  function test_fetchWithPK_other() {
@@ -46,10 +45,11 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
 
         $var_test=$tested->fetchWithPK('80');
 
-
-
-       //$this->assertEquals('80',$var_test->id);
-    }
+  if($var_test->id>0) {
+      $this->assertEquals('80', $var_test->id);
+  } else if($var_test->id==0){
+  $this->assertEquals('0', $var_test->id);
+    } }
 
     public  function test_fetchWithAll() {
 
@@ -65,7 +65,7 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
 
 
             $var_r= R::load('user_roles',$role_ob['id']);
-          // $this->assertEquals($var_r->id,$role_ob['id']);
+          $this->assertEquals($var_r->id,$role_ob['id']);
         }
 
     }
@@ -82,7 +82,7 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
 
         $list_roles_number = R::count( 'user_roles' );
 
-        //  $this->assertEquals($list_roles_number,count($roles_list));
+         $this->assertEquals($list_roles_number,count($roles_list));
 
 
     }
@@ -98,7 +98,7 @@ class user_roles_test extends \PHPUnit_Framework_TestCase
     // $id->isEmpty();
 
 
- //   $this->assertEquals('1',$id->isEmpty());
+  $this->assertEquals('1',$id->isEmpty());
 
 }
 
