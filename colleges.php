@@ -1,5 +1,5 @@
 <?php
-
+require_once ('scripts\RedBeanPHP\rb.php');
 class colleges
 {
 
@@ -24,7 +24,7 @@ class colleges
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `colleges` SET `name` = '$name'  WHERE `colleges`.`id` = '$id'");
+            R::exec(" UPDATE `colleges` SET `name` = '$name'  WHERE `colleges`.`id` = $id");
         } else {
             R::exec("INSERT INTO `colleges` (`id`, `name`) VALUES (NULL, '$name')");
         }
@@ -53,7 +53,7 @@ class colleges
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `colleges` WHERE id ='$id' ");
+            return R::exec("DELETE FROM `colleges` WHERE id =$id ");
         }
     }
 

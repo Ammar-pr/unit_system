@@ -5,6 +5,7 @@
  * Date: 16/10/17
  * Time: 02:08 ص
  */
+require_once ('scripts\RedBeanPHP\rb.php');
 class unit_status
 {
     public function __construct()
@@ -20,7 +21,7 @@ class unit_status
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `unit_status` SET `status_name` = '$status_name', `status_code` = '$status_code' , `description` = '$description' WHERE `unit_status`.`id` = '$id'");
+            R::exec(" UPDATE `unit_status` SET `status_name` = '$status_name', `status_code` = '$status_code' , `description` = '$description' WHERE `unit_status`.`id` = $id");
         } else {
             R::exec("INSERT INTO `unit_status` (`id`, `status_name`, `status_code`, `description`) VALUES (NULL, '$status_name', '$status_code','$description')");
         }
@@ -47,7 +48,7 @@ class unit_status
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `unit_status` WHERE id ='$id' ");
+            return R::exec("DELETE FROM `unit_status` WHERE id =$id ");
         }
     }
     public function deleteAll()

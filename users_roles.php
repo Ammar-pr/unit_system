@@ -1,6 +1,6 @@
 <?php
 
-
+require_once ('scripts\RedBeanPHP\rb.php');
 class users_roles
 {
 
@@ -27,8 +27,8 @@ class users_roles
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `user_roles` SET `role_name` = '$name', `role_number` = '$role_number'  WHERE `user_roles`.`id` = '$id'");
-
+            R::exec(" UPDATE `user_roles` SET `role_name` = '$name', `role_number` = '$role_number'  WHERE `user_roles`.`id` = $id");
+                return $id;
         } else {
               R::exec("INSERT INTO `user_roles` (`id`, `role_name`, `role_number`) VALUES (NULL, '$name', '$role_number')");
 
@@ -58,7 +58,7 @@ class users_roles
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `user_roles` WHERE id ='$id' ");
+            return R::exec("DELETE FROM `user_roles` WHERE id =$id ");
         }
     }
 
@@ -70,3 +70,7 @@ class users_roles
     }
 
 }
+
+
+$user_role= new users_roles();
+$user_role->delete(104);

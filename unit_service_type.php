@@ -5,7 +5,7 @@
  * Date: 16/10/17
  * Time: 12:45 ص
  */
-
+require_once ('scripts\RedBeanPHP\rb.php');
 class unit_service_type
 {
 
@@ -33,7 +33,8 @@ class unit_service_type
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `unit_service_type` SET `name` = '$name', `description` = '$description'  WHERE `unit_service_type`.`id` = '$id'");
+            R::exec(" UPDATE `unit_service_type` SET `name` = '$name', `description` = '$description' WHERE `unit_service_type`.`id` = $id");
+            return $id;
         } else {
             R::exec("INSERT INTO `unit_service_type` (`id`, `name`, `description`) VALUES (NULL, '$name', '$description')");
         }
@@ -61,7 +62,7 @@ class unit_service_type
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `unit_service_type` WHERE id ='$id' ");
+            return R::exec("DELETE FROM `unit_service_type` WHERE id =$id ");
         }
     }
 

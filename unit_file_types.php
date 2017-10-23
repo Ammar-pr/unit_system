@@ -5,7 +5,7 @@
  * Date: 15/10/17
  * Time: 11:02 م
  */
-
+require_once ('scripts\RedBeanPHP\rb.php');
 class unit_file_types
 {
     public  function __construct()
@@ -28,9 +28,10 @@ class unit_file_types
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-            R::exec(" UPDATE `unit_file_type` SET `unit_id` = '$unit_id', `extension` = '$extension' WHERE `unit_file_type`.`id` = '$id'");
+            R::exec(" UPDATE `unitfiletype` SET `unit_id` = '$unit_id', `extension` = '$extension' WHERE `unit_file_type`.`id` = $id");
+           return $id;
         } else {
-            R::exec("INSERT INTO `unit_file_type` (`id`, `unit_id`, `extension`) VALUES (NULL, NULL, '$extension')");
+            R::exec("INSERT INTO `unitfiletype` (`id`, `unit_id`, `extension`) VALUES (NULL, NULL, '$extension')");
         }
 
     }
@@ -39,7 +40,7 @@ class unit_file_types
     {
 
         if ($id > 0) {
-            return R::load('unit_file_type',$id);
+            return R::load('unitfiletype',$id);
         }
 
     }
@@ -48,7 +49,7 @@ class unit_file_types
     {
 
 
-        return R::getAll( 'SELECT * FROM unit_file_type' );
+        return R::getAll( 'SELECT * FROM unitfiletype' );
 
 
 
@@ -57,14 +58,14 @@ class unit_file_types
     public function delete($id)
     {
         if ($id > 0) {
-            return R::exec("DELETE FROM `unit_file_type` WHERE id ='$id' ");
+            return R::exec("DELETE FROM `unitfiletype` WHERE id =$id ");
         }
     }
 
     public function deleteAll()
     {
 
-        return R::exec("DELETE FROM `unit_file_type` ");
+        return R::exec("DELETE FROM `unitfiletype` ");
 
     }
 
