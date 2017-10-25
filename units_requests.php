@@ -29,7 +29,7 @@ class units_requests
             return R::getRedBean()->dispense($table_name);
         });
         if ($id > 0) {
-           echo 'sfdsf';
+
             R::exec("UPDATE `units_requests` SET `id_responder` = $id_responder, `response_date` = Now(), `attachment_response_link` = '$attachment_response_link', `file_hash_response` = '$md5file' WHERE `units_requests`.`id` =".$id );
 
         } else {
@@ -48,6 +48,18 @@ class units_requests
     {
         return R::getAll( 'SELECT * FROM units_requests' );
     }
+
+    public function fetchAll_requester_id($id_requester)
+    {
+        return R::getAll( 'SELECT * FROM units_requests WHERE id_requester ='.$id_requester  );
+    }
+
+    public function fetchAll_responder_id($id_responder)
+    {
+        return R::getAll( 'SELECT * FROM units_requests WHERE id_responder ='.$id_responder  );
+    }
+
+
     public function delete($id)
     {
         if ($id > 0) {
@@ -61,6 +73,7 @@ class units_requests
 }
 $t=new units_requests();
 //
-//$t->SaveRequest(0,1,31,'attachments\arabic_unit\rmf.txt','attachments/arabic_unit/arabic_unit/rmf.txt','adfasd',13);
+//$t->SaveRequest(0,1,31,'attachments\arabic_unit\rmf.txt','attachments/arabic_unit/arabic_unit/req.docx','adfasd',13);
 // 1,  '', '2017-10-11
-$t->SaveRequest(15,0,0,'','',31,2,'attachments\arabic_unit\res.docx');
+//$t->SaveRequest(15,0,0,'','',31,2,'attachments/arabic_unit/res.docx');
+
