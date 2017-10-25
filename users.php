@@ -70,11 +70,11 @@ UPDATE `users` SET `user_job_number` =$user_job_number, `role_id` = $role_id ,`d
     }
 
 
-    public function login($email,$password) {
+        public function login($email,$password) {
 
         $hashed_password= password_hash("$password", PASSWORD_DEFAULT);
-        $user_data=R::getAll( "SELECT * FROM users where email='$email' & pssword='$hashed_password' " );
-      if(count(user_data)>0){
+        $userdata=R::getAll( "SELECT * FROM users where email='$email' & pssword='$hashed_password' " );
+      if(count($userdata)>0){
         return true ;
       }else{
           return false ;
