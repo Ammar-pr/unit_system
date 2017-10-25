@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 24, 2017 at 01:42 AM
+-- Generation Time: Oct 25, 2017 at 03:09 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -59,7 +59,8 @@ CREATE TABLE `colleges_departments` (
 --
 
 INSERT INTO `colleges_departments` (`id`, `college_id`, `department_name`) VALUES
-(26, 5, 'computer');
+(26, 5, 'computer'),
+(27, 5, 'art');
 
 -- --------------------------------------------------------
 
@@ -100,14 +101,6 @@ CREATE TABLE `units_requests` (
   `file_hash_request` varchar(256) NOT NULL,
   `title` varchar(100) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `units_requests`
---
-
-INSERT INTO `units_requests` (`id`, `id_requester`, `id_responder`, `request_date`, `response_date`, `status_id`, `unit_id`, `attachment_request_link`, `attachment_response_link`, `file_hash_response`, `file_hash_request`, `title`) VALUES
-(1, 1, 2, '2017-10-25 04:12:15', '2017-10-25 04:12:15', 31, 13, 'sdfsdfsdfdsfsd', 'sdfdsfsdfsdfd', 'sdfsdfsdfsdfd', 'sdfdsfsdfsdfsdfsdfsd', 'sdfdsfsdf'),
-(2, 1, 2, '2017-10-24 00:06:16', '2017-10-02 00:23:21', 31, 22, 'asd', 'asd', 'asdasd', 'asdasdsa', 'asdsads');
 
 -- --------------------------------------------------------
 
@@ -161,17 +154,9 @@ CREATE TABLE `users` (
   `department_id` int(11) NOT NULL,
   `name` varchar(50) NOT NULL,
   `password` varchar(128) NOT NULL,
-  `phonenumber_number` varchar(20) NOT NULL,
-  `user_name` varchar(50) NOT NULL
+  `phonenumber_number` bigint(20) NOT NULL,
+  `email` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8;
-
---
--- Dumping data for table `users`
---
-
-INSERT INTO `users` (`id`, `user_job_number`, `role_id`, `department_id`, `name`, `password`, `phonenumber_number`, `user_name`) VALUES
-(1, 232, 22, 26, 'sdfsdf', 'sdfsdfesrg', '0503448951', 'qhc@hotmail.com'),
-(2, 11, 1, 26, 'asdsad', 'a@345354', '5034489532', 'qq@hotmail.com');
 
 -- --------------------------------------------------------
 
@@ -222,11 +207,12 @@ ALTER TABLE `unitfiletype`
 --
 ALTER TABLE `units_requests`
   ADD PRIMARY KEY (`id`),
-  ADD UNIQUE KEY `unit_id` (`unit_id`),
   ADD UNIQUE KEY `title` (`title`),
   ADD KEY `id_requester` (`id_requester`),
   ADD KEY `id_responder` (`id_responder`),
-  ADD KEY `status_id` (`status_id`);
+  ADD KEY `status_id` (`status_id`),
+  ADD KEY `status_id_2` (`status_id`),
+  ADD KEY `forunit_id` (`unit_id`);
 
 --
 -- Indexes for table `unit_service_type`
@@ -247,11 +233,12 @@ ALTER TABLE `unit_status`
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`),
   ADD UNIQUE KEY `user_job_number` (`user_job_number`),
-  ADD UNIQUE KEY `user_name` (`user_name`),
+  ADD UNIQUE KEY `user_name` (`email`),
   ADD UNIQUE KEY `phonenumber_number` (`phonenumber_number`),
   ADD KEY `user_job_number_2` (`user_job_number`),
   ADD KEY `role_id` (`role_id`),
-  ADD KEY `department_id` (`department_id`);
+  ADD KEY `department_id` (`department_id`),
+  ADD KEY `role_id_2` (`role_id`);
 
 --
 -- Indexes for table `user_roles`
@@ -267,7 +254,7 @@ ALTER TABLE `user_roles`
 -- AUTO_INCREMENT for table `colleges_departments`
 --
 ALTER TABLE `colleges_departments`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=27;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=28;
 --
 -- AUTO_INCREMENT for table `unitfiletype`
 --
@@ -277,7 +264,7 @@ ALTER TABLE `unitfiletype`
 -- AUTO_INCREMENT for table `units_requests`
 --
 ALTER TABLE `units_requests`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=49;
 --
 -- AUTO_INCREMENT for table `unit_service_type`
 --
@@ -292,12 +279,12 @@ ALTER TABLE `unit_status`
 -- AUTO_INCREMENT for table `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=15;
 --
 -- AUTO_INCREMENT for table `user_roles`
 --
 ALTER TABLE `user_roles`
-  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=110;
+  MODIFY `id` int(11) UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=23;
 --
 -- Constraints for dumped tables
 --
@@ -327,7 +314,8 @@ ALTER TABLE `units_requests`
 -- Constraints for table `users`
 --
 ALTER TABLE `users`
-  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `colleges_departments` (`id`);
+  ADD CONSTRAINT `users_ibfk_1` FOREIGN KEY (`department_id`) REFERENCES `colleges_departments` (`id`),
+  ADD CONSTRAINT `users_ibfk_2` FOREIGN KEY (`department_id`) REFERENCES `colleges_departments` (`id`);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
