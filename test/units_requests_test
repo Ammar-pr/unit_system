@@ -176,8 +176,7 @@ class units_requests_test extends \PHPUnit_Framework_TestCase
 
 }
 
-$tested = new units_requests();
+//$tested = new units_requests();
 
 //$tested->Save(0,1,31,'req.docx','test is test',13,2,'');
-
 
