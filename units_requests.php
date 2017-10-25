@@ -33,9 +33,8 @@ class units_requests
 
         $current_date = "$date:$month:$year : $hour:$min:$sec";
 
-        //echo $current_date;
-        $md5file = md5_file($filename);
 
+        $md5file = md5_file($filename);
 
 
         R::ext('xdispense', function ($table_name) {
@@ -43,7 +42,7 @@ class units_requests
         });
         if ($id > 0) {
         } else {
-            return R::exec("INSERT INTO `units_requests` ( `id_requester`, `request_date`, `status_id`, `unit_id`, `attachment_request_link` , `title` , `file_hash_request`) VALUES ( 1,  '2017-10-04 00:00:00', 31, 13, 'test 8', 'test 8','test 8')");
+            return R::exec("INSERT INTO `units_requests` ( `id_requester`, `request_date`, `status_id`, `unit_id`, `attachment_request_link` , `title` , `file_hash_request`) VALUES ( $id_requester,  Now(),$status_id , $unit_id, '$attachment_request_link', '$title','$md5file')");
         }
 
     }
@@ -89,6 +88,7 @@ class units_requests
 
 }
 
-$t=new units_requests();
-$t->SaveRequest(0,1,31,'attachments\arabic_unit\rmf.txt','attachments/arabic_unit/arabic_unit/rmf.txt','jhffxfg',13);
-// 1,  '', '2017-10-11 00:00:00', 31, 13, 'test 7', 'test 7','75ljfgx2017-10-04 00:00:00 -attachments\arabic_unit\rmf.txt
+//$t=new units_requests();
+//
+//$t->SaveRequest(0,1,31,'attachments\arabic_unit\rmf.txt','attachments/arabic_unit/arabic_unit/rmf.txt','adfasd',13);
+// 1,  '', '2017-10-11 
